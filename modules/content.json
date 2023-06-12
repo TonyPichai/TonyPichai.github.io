@@ -1,0 +1,134 @@
+[
+    {
+        "id": "0",
+        "title": "A2B",
+        "subtitle": "GVVT | Museum Sculpture",
+        "projectType": "Museum Installation",
+        "association": "GVVT",
+        "roles": "Concept, Storytelling, UX, Installation, Video Editor",
+        "technology": "After Effects, Projection Mapping",
+        "feature-pg-position": "1",
+        "mainImage": "./modules/media/A2B/socket.png"
+        
+    },
+    {
+        "id": "1",
+        "title": "Artificial-Yoga",
+        "subtitle": "UAL | Learning Project",
+        "projectType": "University Project",
+        "association": "UAL",
+        "roles": "AI Training, Model Selection, Data Cleaning",
+        "technology": "Generative Adversarial Networks, Python, Pytorch",
+        "feature-pg-position": "",
+        "mainImage": "./modules/media/Artificial-yoga/artificial-yoga_1.jpg"
+        
+    },
+    {
+        "id": "2",
+        "title": "Attention! Economics",
+        "subtitle": "GSA | Interactive Video Sculpture",
+        "projectType": "Art Installation",
+        "association": "UAL",
+        "roles": "Concept, Technologist, Programmer, UX, Game Design",
+        "technology": "Processing, Arduino, Automator, After Effects",
+        "feature-pg-position": "",
+        "mainImage": "./modules/media/attention-economy/ATM3.png"
+        
+    },
+    {
+        "id": "3",
+        "title": "colour-fully",
+        "subtitle": "GSA | Interactive Video Sculpture",
+        "projectType": "Art Installation",
+        "association": "GSA",
+        "roles": "Concept, Programmer, UX",
+        "technology": "Processing, OpenCV",
+        "feature-pg-position": "",
+        "mainImage": "./modules/media/colourMe/person.png"
+        
+    },
+    {
+        "id": "4",
+        "title": "Get a grip",
+        "subtitle": "UAL | Educational Project",
+        "projectType": "University Project",
+        "association": "UAL",
+        "roles": "3D Fabrication, Electronics, Programming",
+        "technology": "Arduino",
+        "feature-pg-position": "",
+        "mainImage": "./modules/media/get-a-grip/controller.jpg"
+        
+    },
+    {
+        "id": "5",
+        "title": "kill-club",
+        "subtitle": "The Vic | Live Performance and Interactive Video",
+        "projectType": "Club Night",
+        "association": "kill-club",
+        "roles": "Developer, Performer, Technologist",
+        "technology": "Processing, OpenCV",
+        "feature-pg-position": "",
+        "mainImage": "./modules/media/kill-club/SyphonEyeCapture/eyes-000000.JPG"
+        
+    },
+    {
+        "id": "6",
+        "title": "narrative-machines",
+        "subtitle": "New Designers | Interactive Video Sculpture",
+        "projectType": "Artwork",
+        "association":"GSA, New Designers",
+        "roles": "Concept, Programming, Data Cleaning, 3D Fabrication, Video Editing, Embedded Electronics",
+        "technology": "Arduino, Teensy, Processing, After Effects, RIta (Markov Chains)",
+        "feature-pg-position": "",
+        "mainImage": "./modules/media/narrative-machines/Narrative_Machine_5.png"
+        
+    },
+    {
+        "id": "7",
+        "title": "touchy-feely",
+        "subtitle": "New Perspectives | Interactive Multi-Media and Video Game",
+        "projectType": "Collaborative Art Installation",
+        "association": "UAL, New-Perspectives",
+        "roles": "Conceptual Development, 3D Fabrication, 3D Modelling, Programming, Electronics",
+        "technology": "Unreal Engine, Arduino",
+        "feature-pg-position": "",
+        "mainImage": "./modules/media/touchy-feely/touchy-feely.png"
+        
+    },
+    {
+        "id": "8",
+        "title": "Technically, natural...",
+        "subtitle": "GSA | Interactive Video Sculpture",
+        "projectType": "Artwork",
+        "association": "GSA",
+        "roles": "Concept, Video Editing, Programming, Technologist",
+        "technology": "Processing, After Effects",
+        "feature-pg-position": "",
+        "mainImage": "./modules/media/technically-natural/gallery.jpg"
+        
+    },
+    {
+        "id": "9",
+        "title": "Gather",
+        "subtitle": "Concept Design | UX App",
+        "projectType": "Collaborative Project",
+        "association": "GSA",
+        "roles": "Concept, Research, UX",
+        "technology": "Adobe XD, Illustrator",
+        "feature-pg-position": "",
+        "mainImage": "./modules/media/gather/gather.png"
+        
+    },
+    {
+        "id": "10",
+        "title": "Face To No Face",
+        "subtitle": "New Designers | Interactive Video Sculpture",
+        "projectType": "Artwork",
+        "association": "GSA",
+        "roles": "Concept, Programming, Technologist",
+        "technology": "Processing, OpenCV, Syphon",
+        "feature-pg-position": "",
+        "mainImage": "./modules/media/faceToNoFace/faceToNoFace.png"
+        
+    }
+]

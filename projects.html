@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style-grid.css">
+    <script type="module" async src="/modules/header.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+
+    <header class="sticky-header">
+        <div class="container row" id="rowId">
+            <section class="name-container">
+                <h1 class="name">Anthony Pichai Garnett</h1>
+            </section>
+            <section class="burger-nav">
+                <div class="tab-focus">
+                    <h2 class="tab">Overview</h2>
+                </div>
+                <input type="checkbox" id="burger-button"/>
+                <label class="btn-checkbox-area" for="burger-button">
+                    <div class="burger-nav-icon">
+                        <div class="clockwise__top"></div>
+                        <div class="clockwise__bottom"></div>
+                    </div>
+                    <nav class="nav-modal">
+                        <div class="modal-container col">
+                            <ul>
+                                <li><h2><a href="index.html" class="modal-nav-links">Overview</a></h2></li>
+                                <li><h2><a href="projects.html" class="modal-nav-links">Projects</a></h2></li>
+                                <li><h2><a href="#" class="modal-nav-links">About</a></h2></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </label>
+            </section>
+        </div>
+    </header>
+
+    <section class="overlay flex-container">
+        
+        <aside class="overlay-column1">
+            <header class="name-container">
+                <h1 class="name">Anthony Pichai Garnett</h1>
+            </header>
+            <footer class="nav-container">
+                <a href="#" class="nav">
+                    <span>↑</span>
+                    Top
+                </a>
+                <a href="#" class="nav">
+                    <span>←</span>
+                    Back
+                </a> 
+            </footer>
+        </aside>
+
+        <aside class="overlay-column2">
+            <section class="sidebar-container">
+                <nav class="sidebar-content">
+                    <ul class="nav-menu">
+                        <li><h2><a href="#" class="nav-links">About</a></h2></li>
+                        <li><h2><a href="projects.html" class="nav-links">Projects</a></h2></li>
+                        <li><h2><a href="index.html" class="nav-links">Overview</a></h2></li>
+                        <li><h2><a href="contact.html" class="nav-links">Contact</a></h2></li>
+                    </ul>
+                </nav>
+            </section>
+        </aside>
+    </section>
+    
+    <section class="projects" id="projectMenuID">
+        <div class="container">
+            <ul id="projectListID" class="project-list"></ul>            
+        </div>
+    </section>
+
+    <section id="hero" class="hero row-1">
+        <!-- <div class="row-1"> -->
+            <div id="heroID" class="hero-container">
+                <div id="heroImageContainer" class="hero-image-container"></div>
+                <div id="heroTextContainer" class="hero-text-container">
+                    <div class="hero-text">
+                        <h1 id="heroTitle"class="hero-title">hello</h1>
+                        <h2 id="heroSubtitle"class="hero-subtitle">subtitle</h2>
+                    </div>
+                </div>
+            </div>
+        <!-- </div> -->
+    </section>
+
+
+
+    <main id="gridContainer" class="grid-container row-2">
+
+        <section id="categories" class="grid-itm categories">
+            <div class="categories-container">
+                
+                <!-- <div class="flex-container"> -->
+                    <div class="category">
+                        <div class="text-box">
+                            <h2>Association</h2>
+                            <p id="associate"></p>
+                        </div>
+                    </div>
+                    <div class="category">
+                        <div class="text-box">
+                            <h2>Project Type</h2>
+                            <p id="projectType"></p>
+                        </div>
+                    </div>
+                    <div class="category">
+                        <div class="text-box">
+                            <h2>Roles</h2>
+                            <p id="roles"></p>
+                        </div>
+                    </div>
+                    <div class="category">
+                        <div class="text-box">
+                            <h2>Technologies</h2>
+                            <p id="technology"></p>
+                        </div>
+                    </div>
+                <!-- </div> -->
+            </div>
+        </section>
+
+
+        <article class="grid-itm main-article row-3">
+            <div class="main-article-container">
+                <div class="flex-container article">
+
+                    <div class="article-img">
+                        <!-- <img src="cabbage.jpg" alt="it's cabbage"> -->
+                    </div>
+                    <div class="article-text">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor sed qui repellat expedita impedit, officia ipsa officiis consequuntur labore ad cum repudiandae laudantium itaque quis magni amet, tempora a! Dicta laboriosam cumque voluptatem et nihil aut architecto voluptas, vel fugit, aliquam voluptate iure illum voluptatum impedit odio veritatis neque minima.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+    </main>
+    <script>
+        const categories = document.getElementById('categories');
+        const computedStyle = window.getComputedStyle(categories);
+        const zIndex = computedStyle.getPropertyValue('z-index');
+
+        console.log('Z-index of categories is:', zIndex);
+    </script>
+</body>
+</html>
+        

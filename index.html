@@ -1,24 +1,100 @@
+
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <title>Peach Tony's place</title>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="module" async src="/modules/header.js"></script>
 
-    <body>
-        <main>
+    <title>Peach Tony's place</title>
+</head>
 
-            <!-- Each section gets its own hierarchy -->
-            <section>
-                <article>
-                    <h1>Hello World, hello...me?</h1>
-                    <p>What u lookin at?... What we all lookin at?</p>
-                    <container></container>
-                </article>
+<body>
+    <header class="sticky-header">
+        <div class="container row" id="rowId">
+            <div class="name-container">
+                <h1 class="name">Anthony Pichai Garnett</h1>
+            </div>
+            <div class="burger-nav">
+                <div class="tab-focus">
+                    <h2 class="tab">Overview</h2>
+                </div>
+                <input type="checkbox" id="burger-button">
+                <label class="btn-checkbox-area" for="burger-button">
+                    <div class="burger-nav-icon">
+                        <div class="clockwise__top"></div>
+                        <div class="clockwise__bottom"></div>
+                    </div>
+                    <nav class="nav-modal">
+                        <div class="flex-container col">
+                            <ul>
+                                <li><h2><a href="index.html" class="modal-nav-links">Overview</a></h2></li>
+                                <li><h2><a href="projects.html" class="modal-nav-links">Projects</a></h2></li>
+                                <li><h2><a href="#" class="modal-nav-links">About</a></h2></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </label>
+            </div>
+        </div>
+    </header>
+
+        <!-- Each section gets its own hierarchy -->
+    <main class="page-content">
+
+        <aside class="sidebar-left">
+            <div class="sidebar-content">
+                <section class="name-container">
+                    <h1 class="name">Anthony Pichai Garnett</h1>
+                </section>
+                <section class="footer__items">
+                    <a href="#" class="nav">
+                        <span>↑</span>
+                        Top
+                    </a>
+                    <a href="#" class="nav">
+                        <span>←</span>
+                        Back
+                    </a>
+                </section>
+            </div>
+        </aside>
+
+        <section class="gallery">
+            <div class="container">
+                <div id="galleryAutoGrid" class="gallery-auto-grid">
+                </div>
+            </div>
+        </section>
+
+        <aside class="sidebar-right">
+            <section class="container">
+                <nav class="sidebar-content ">
+                    <ul class="nav-menu">
+                        <li><h2><a href="#" class="nav-links">About</a></h2></li>
+                        <li><h2><a href="projects.html" class="nav-links">Projects</a></h2></li>
+                        <li><h2><a href="index.html" class="nav-links">Overview</a></h2></li>
+                        <li><h2><a href="contact.html" class="nav-links">Contact</a></h2></li>
+                    </ul>
+                </nav>
             </section>
+        </aside>
+    </main>
 
-        </main>
-    </body>
+    <footer>
+        <div class="footer__items">
+            <a href="#" class="nav">
+                <span>↑</span>
+                Top
+            </a>
+            <a href="#" class="nav">
+                <span>←</span>
+                Back
+            </a>
+        </div>
+    </footer>
+    
+    <script async src="script.js"></script>
+</body>
 </html>
