@@ -12,6 +12,7 @@ export function populateGalleryContainer(jsonData, galleryGrid) {
       const galleryItemContainerOverlay = document.createElement('div');
       const titleContainer = document.createElement('a');
       const title = document.createElement('h2');
+      const imageContainer = document.createElement('div');
       const imageSource = obj.mainImage;
       const image = new Image();
 
@@ -27,21 +28,18 @@ export function populateGalleryContainer(jsonData, galleryGrid) {
       // const indexKey = obj.id;
       // console.log('Object index:', indexKey);
 
-
+      imageContainer.setAttribute('class', 'gallery-item__image-container');
       image.setAttribute('class', 'gallery-item_image');
       title.setAttribute('class', 'gallery-item_title gallery-nav-links');
       titleContainer.setAttribute('class', 'gallery-item__title-container');
             
-
-
-
       galleryItemContainer.setAttribute('class', 'gallery-item');
       galleryItemContainer.setAttribute('id', 'galleryItem_' + obj.id);
-
       galleryItemContainerOverlay.setAttribute('class', 'gallery-item__overlay');
 
       titleContainer.appendChild(title);
-      galleryItemContainer.appendChild(image);
+      imageContainer.appendChild(image);
+      galleryItemContainer.appendChild(imageContainer);
       galleryItemContainer.appendChild(titleContainer);
       galleryGrid.appendChild(galleryItemContainer);
 
