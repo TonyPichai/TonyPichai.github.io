@@ -8,10 +8,10 @@ async function generatePageContent() {
         const response = await fetch('/modules/content.json');
         const jsonData = await response.json();
 
-        // Get element you're putting stuff into
+        // Get the gallery grid element
         const galleryGrid = document.getElementById('galleryAutoGrid');
-        // await populateGalleryContainer(jsonData, galleryGrid);
         await scriptSelector(jsonData, galleryGrid);
+
         // hoverEffects();
     }
     catch (error) {
@@ -47,7 +47,6 @@ async function scriptSelector(jsonData, galleryGrid) {
 // Determine the current page and return keyword
 function determineCurrentPage() {
     const pathname = window.location.pathname;
-
     if (pathname.includes('/projects.html')) {
         return 'projects';
     } else if (pathname.includes('/index.html')) {

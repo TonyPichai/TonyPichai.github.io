@@ -1,9 +1,11 @@
+// PROJECTS PAGE 
 // Project list and page generation
 export async function createProjectList(jsonData) {
     const listElement = document.getElementById('projectListID');
     const listItemPromises = jsonData.map( obj => createListItems(jsonData, obj, listElement));
     return Promise.all(listItemPromises);
 }
+
 
 function createListItems(jsonData, obj, listElement) {
 
@@ -12,12 +14,6 @@ function createListItems(jsonData, obj, listElement) {
     const URLParameter = new URLSearchParams(URLString);
     const retrievedObjectIndex = URLParameter.get('index');
     console.log('Retrieved parameter:', retrievedObjectIndex);
-
-// %%%%%%%%%%%%%%%%%%
-    // foreach obj in jsonData
-    // if obj.id == retrievedObjectIndex
-    //     like in the click function - build page
-// %%%%%%%%%%%%%%%%%%
 
     const listItem = document.createElement('li');
     listItem.classList.add('list-item');
@@ -36,6 +32,7 @@ function createListItems(jsonData, obj, listElement) {
     listItem.appendChild(itemContainer);
     listElement.appendChild(listItem);
 
+    // On list item selection
     if (retrievedObjectIndex != null) {
         console.log('object retrieved is:', jsonData[retrievedObjectIndex].title);
         const objIndex = jsonData[retrievedObjectIndex];
@@ -49,78 +46,111 @@ function createListItems(jsonData, obj, listElement) {
     });
 
 
-
+// On list item selection...
 function generateProjectContent() {
+    
+    const name = document.getElementById('nameID');
+    name.style.color = 'rgb(255, 255, 255)';
+
+    const nav = document.getElementById('navID');
+    const listItems = nav.querySelectorAll('li');
+    listItems.forEach(item => {
+        item.classList.add('white-text');
+        item.style.textDecoration = 'none';
+        item.style.color = 'white';
+        console.log('style change');
+    });
+    
     const listSection = document.getElementById('projectMenuID');
-        listSection.style.display = 'none';
-        // Reveal project grid
-        const projectGridContainer = document.getElementById('gridContainer');
-        projectGridContainer.style.display = 'grid';
+    listSection.style.display = 'none';
 
-        const hero = document.getElementById('hero');
-        hero.style.display = 'block';
+    const cats = document.getElementById('categories');
+    cats.style.display = 'flex';
 
+    // Reveal project grid
+    const projectGridContainer = document.getElementById('gridContainer');
+    projectGridContainer.style.display = 'grid';
+    const hero = document.getElementById('hero');
+    hero.style.display = 'block';
 
-        // POPULATE HERO
-        const heroImgContainer = document.getElementById('heroImageContainer');
-        const heroImage = new Image();
-        heroImage.classList.add('hero-image');
-        heroImage.src = obj.mainImage;
-        heroImgContainer.appendChild(heroImage);
+    // POPULATE HERO
+    const heroImgContainer = document.getElementById('heroImageContainer');
+    heroImgContainer.innerHTML = '';
+    const heroImage = new Image();
+    heroImage.classList.add('hero-image');
+    heroImage.src = obj.mainImage;
+    heroImgContainer.appendChild(heroImage);
+    const heroTitle = document.getElementById('heroTitle');
+    heroTitle.innerHTML = obj.title;
+    const heroSubtitle = document.getElementById('heroSubtitle');
+    heroSubtitle.innerHTML = obj.subtitle;
 
-        const heroTitle = document.getElementById('heroTitle');
-        heroTitle.innerHTML = obj.title;
-        const heroSubtitle = document.getElementById('heroSubtitle');
-        heroSubtitle.innerHTML = obj.subtitle;
-
-
-        const projectType = document.getElementById('projectType');
-        projectType.innerHTML = obj.projectType;
-
-        const associate = document.getElementById('associate');
-        associate.innerHTML = obj.association;
-        
-        const roles = document.getElementById('roles');
-        roles.innerHTML = obj.roles;
-
-        const technology = document.getElementById('technology');
-        technology.innerHTML = obj.technology;
+    // Populate main article
+    const projectType = document.getElementById('projectType');
+    projectType.innerHTML = obj.projectType;
+    const associate = document.getElementById('associate');
+    associate.innerHTML = obj.association;
+    
+    const roles = document.getElementById('roles');
+    roles.innerHTML = obj.roles;
+    const technology = document.getElementById('technology');
+    technology.innerHTML = obj.technology;
+    const mainText = document.getElementById('articleText');
+    mainText.innerHTML = '';
+    mainText.innerHTML = obj.mainText;
 }
+
+// After using HTTP query to get the index varibale ...
 function projectContentFromIndex(objIndex) {
+    const name = document.getElementById('nameID');
+    name.style.color = 'rgb(255, 255, 255)';
+
+    const nav = document.getElementById('navID');
+    const listItems = nav.querySelectorAll('li');
+    listItems.forEach(item => {
+        item.classList.add('white-text');
+        item.style.textDecoration = 'none';
+        item.style.color = 'white';
+        console.log('style change');
+    });
+
     const listSection = document.getElementById('projectMenuID');
-        listSection.style.display = 'none';
-        // Reveal project grid
-        const projectGridContainer = document.getElementById('gridContainer');
-        projectGridContainer.style.display = 'grid';
+    listSection.style.display = 'none';
 
-        const hero = document.getElementById('hero');
-        hero.style.display = 'block';
+    const cats = document.getElementById('categories');
+    cats.style.display = 'flex';
 
+    // Reveal project grid
+    const projectGridContainer = document.getElementById('gridContainer');
+    projectGridContainer.style.display = 'grid';
+    const hero = document.getElementById('hero');
+    hero.style.display = 'block';
 
-        // POPULATE HERO
-        const heroImgContainer = document.getElementById('heroImageContainer');
-        const heroImage = new Image();
-        heroImage.classList.add('hero-image');
-        heroImage.src = objIndex.mainImage;
-        heroImgContainer.appendChild(heroImage);
+    // POPULATE HERO
+    const heroImgContainer = document.getElementById('heroImageContainer');
+    heroImgContainer.innerHTML = '';
+    const heroImage = new Image();
+    heroImage.classList.add('hero-image');
+    heroImage.src = objIndex.mainImage;
+    heroImgContainer.appendChild(heroImage);
+    const heroTitle = document.getElementById('heroTitle');
+    heroTitle.innerHTML = objIndex.title;
+    const heroSubtitle = document.getElementById('heroSubtitle');
+    heroSubtitle.innerHTML = objIndex.subtitle;
 
-        const heroTitle = document.getElementById('heroTitle');
-        heroTitle.innerHTML = objIndex.title;
-        const heroSubtitle = document.getElementById('heroSubtitle');
-        heroSubtitle.innerHTML = objIndex.subtitle;
-
-
-        const projectType = document.getElementById('projectType');
-        projectType.innerHTML = objIndex.projectType;
-
-        const associate = document.getElementById('associate');
-        associate.innerHTML = objIndex.association;
-        
-        const roles = document.getElementById('roles');
-        roles.innerHTML = objIndex.roles;
-
-        const technology = document.getElementById('technology');
-        technology.innerHTML = objIndex.technology;
+    // Populate main article
+    const projectType = document.getElementById('projectType');
+    projectType.innerHTML = objIndex.projectType;
+    const associate = document.getElementById('associate');
+    associate.innerHTML = objIndex.association;
+    
+    const roles = document.getElementById('roles');
+    roles.innerHTML = objIndex.roles;
+    const technology = document.getElementById('technology');
+    technology.innerHTML = objIndex.technology;
+    const mainText = document.getElementById('articleText');
+    mainText.innerHTML = '';
+    mainText.innerHTML = objIndex.mainText;
 }
     // PARALLAX SCROLL 
 function positionHeroText () {
@@ -144,37 +174,3 @@ function positionHeroText () {
       parallaxElement.style.transform = 'translateY(' + newPosition + 'px)';
     });
   }}
-
-
-
-    
-
-        // // Generate page content
-        // const projectContainer = document.createElement('section');
-        // projectContainer.classList.add(obj.title + '-container');
-
-        // // Hero section
-        // const hero = document.createElement('section');
-        // hero.classList.add('hero');
-        // projectContainer.appendChild(hero);
-
-        // // Add row to hero
-        // const row = document.createElement('section');
-        // row.classList.add('row');
-        // row.classList.add('container');
-        // hero.appendChild(row);
-
-        // // Add image container and image
-        // // const imageContainer = document.createElement('div');
-        // const image = new Image();
-        // imageContainer.classList.add('hero-img-container')
-        // image.src = obj.mainImage;
-        // imageContainer.appendChild(image);
-        // row.appendChild(imageContainer);
-
-
-        // // Append the content to a desired location
-        // const placementOnPage = document.body;
-        // placementOnPage.appendChild(projectContainer);
-    // })
-// }
