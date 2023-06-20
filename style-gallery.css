@@ -361,7 +361,7 @@ img {
 }
 .gallery-item__overlay {
     /* display: flex; */
-    position: relative;
+    position: absolute;
     margin: 0 auto;
     padding: 0em;
     /* top: 50%;
