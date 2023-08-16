@@ -1,0 +1,23 @@
+.text-container {
+    font-family: var(--font-three);
+    width: 60%;
+    margin: 10em auto 0 auto;
+    position: relative;
+    letter-spacing: .1em;
+    line-height: 2.5em;
+    font-weight: 800;
+    color: var(--colour-two);
+}
+.about {
+    width: 100%;
+    font-size: calc(1.3em + 1px);
+}
+
+@media screen and (min-width: 600px) {
+    .text-container {
+        width: 60%;
+        margin-top: calc(10em + 10px);
+        top: -10%;
+        align-self: center;
+    }
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style-index.css">
+    <link rel="stylesheet" type="text/css" href="style-container-nav.css">
+    <link rel="stylesheet" type="text/css" href="style-bgr-modal.css">
+
+    <link rel="stylesheet" href="https://use.typekit.net/mcx1lbh.css">
+
+    <!-- Local Hosting -->
+    <script type="module" async src="modules/header.js"></script>
+
+    <!-- github Hosting -->
+    <!-- <script type="text/javascript" async src="../modules/header.js"></script> -->
+
+    <title>Tony's place</title>
+</head>
+
+<body>
+    <header class="sticky-header">
+        <div class="container row" id="rowId">
+            <div class="name-container">
+                <h1 class="name">Anthony Pichai Garnett</h1>
+            </div>
+            <div class="burger-nav">
+                <div class="tab-focus">
+                    <h2 class="tab"></h2>
+                </div>
+                <input type="checkbox" id="burger-button">
+                <label class="btn-checkbox-area" for="burger-button">
+                    <div class="burger-nav-icon">
+                        <div class="clockwise__top"></div>
+                        <div class="clockwise__bottom"></div>
+                    </div>
+                    <nav class="nav-modal">
+                        <div class="flex-container col">
+                            <ul>
+                                <li><h2><a href="index.html" class="modal-nav-links">Overview</a></h2></li>
+                                <li><h2><a href="projects.html" class="modal-nav-links">Projects</a></h2></li>
+                                <li><h2><a href="about.html" class="modal-nav-links">About</a></h2></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <section class="base-grid">
+        
+        <aside class="base-grid-col-1">
+                <section class="sidebar-container sidebar-left">
+                    <header class="nav-name">
+                        <h1 id="nameID" class="name">Anthony Pichai Garnett</h1>
+                    </header>
+                    <footer class="nav-footer">
+                        <a href="#" class="nav">
+                            <span>↑</span>Top
+                        </a>
+                        <a href="#" class="nav">
+                            <span>←</span>Back
+                        </a>
+                    </footer>
+                </section>
+        </aside>
+
+        <!-- <main class="page-content"> -->
+            <main class="base-grid-col-2 gallery page-content">
+                <div id="galleryAutoGrid" class="gallery-auto-grid"></div>
+            </main>
+        <!-- </main> -->
+
+        <aside class="base-grid-col-3">
+                <section class="sidebar-container sidebar-right">
+                    <nav id="sidebarID" class="sidebar-content">
+                        <ul class="nav-menu">
+                            <li><h2><a id="navID" href="about.html" class="nav-links">About</a></h2></li>
+                            <li><h2><a id="navID" href="projects.html" class="nav-links">Projects</a></h2></li>
+                            <li><h2><a id="navID" href="index.html" class="nav-links">Overview</a></h2></li>
+                            <li><h2><a id="navID" href="about.html" class="nav-links">Contact</a></h2></li>
+                        </ul>
+                    </nav>
+                </section>
+        </aside>
+
+    </section>
+    
+</body>
+</html>
