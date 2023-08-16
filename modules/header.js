@@ -1,5 +1,5 @@
-import { createProjectList } from '/project-list-maker.js';
-import { populateGalleryContainer } from '/gallery-maker.js';
+import { createProjectList } from './project-list-maker.js';
+import { populateGalleryContainer } from './gallery-maker.js';
 
 // 1. GETTING data form content.json
 // 2. Handle json data as a variable
@@ -13,7 +13,7 @@ async function generatePageContent() {
         // const response = await fetch('modules/content.json');
 
         // Github file path!!!
-        const response = await fetch('/modules/content.json');
+        const response = await fetch('./modules/content.json');
 
         const jsonData = await response.json();
 
