@@ -1,5 +1,5 @@
-import { createProjectList } from './project-list-maker.js';
-import { populateGalleryContainer } from './gallery-maker.js';
+import { createProjectList } from '/modules/project-list-maker.js';
+import { populateGalleryContainer } from '/modules/gallery-maker.js';
 
 // 1. GETTING data form content.json
 // 2. Handle json data as a variable
