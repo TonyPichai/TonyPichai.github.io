@@ -26,7 +26,6 @@ async function generatePageContent() {
         console.error('unable to access content:', error);
     }
 }
-generatePageContent();
 
 
 // %%% Which script file to execute? %%%
@@ -34,18 +33,6 @@ generatePageContent();
 //  Identify the page from the url/filepath
 
 async function scriptSelector(jsonData, galleryGrid) {
-
-    const currentPage = () => {
-        const pathname = window.location.pathname;
-        if (pathname.includes('/projects.html')) {
-            return 'projects';
-        } else if (pathname.includes('/index.html')) {
-            return 'index';
-        } else if (pathname.includes('/about.html')) {
-            return 'about';
-        }
-            return 'unknown';
-    }; 
 
     // Get the result of the arrow function.
     // ONLY THEN can the value be used in the comparison operator
@@ -63,3 +50,17 @@ async function scriptSelector(jsonData, galleryGrid) {
       console.log('about page');
     }
 }
+
+
+function currentPage() {
+    const pathname = window.location.pathname;
+    if (pathname.includes('/projects.html')) {
+        return 'projects';
+    } else if (pathname.includes('/index.html')) {
+        return 'index';
+    } else if (pathname.includes('/about.html')) {
+        return 'about';
+    }
+        return 'unknown';
+}; 
+generatePageContent();
