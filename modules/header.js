@@ -9,7 +9,7 @@ async function generatePageContent() {
     try {
         // Get data as string and convert to usable json
         // Local file path
-        const response = await fetch('modules/content.json');
+        const response = await fetch('/modules/content.json');
 
         // Github file path!!!
         // const response = await fetch('/modules/content.json');
