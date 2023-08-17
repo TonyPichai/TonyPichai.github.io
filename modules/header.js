@@ -1,58 +1,51 @@
-import { createProjectList } from './modules/project-list-maker.js';
-import { populateGalleryContainer } from './modules/gallery-maker.js';
+import { createProjectList } from './project-list-maker.js';
+import { populateGalleryContainer } from './index-gallery-maker.js';
 
-// 1. GETTING data form content.json
-// 2. Handle json data as a variable
-// 3. Pass variable to other functions as needed 
 async function generatePageContent() {
     // Network request, get your json data
     try {
         // Get data as string and convert to usable json
-        // Local file path
-        // const response = await fetch('modules/content.json');
-
-        // Github file path!!!
-        const response = await fetch('./modules/content.json');
-
+        const response = await fetch('/modules/content.json');
         const jsonData = await response.json();
 
         // Get the gallery grid element
         const galleryGrid = document.getElementById('galleryAutoGrid');
-
         await scriptSelector(jsonData, galleryGrid);
 
+        // hoverEffects();
     }
     catch (error) {
         console.error('unable to access content:', error);
     }
 }
 
+generatePageContent();
 
-// %%% Which script file to execute? %%%
-//  Using determineCurrentPage()
-//  Identify the page from the url/filepath
-
+// Using keywords from determineCurrentPage();
+// call appropriate function
+// Don't forget! These functions all have their own context
+// Remember to pass each function the appropriate elements and objects/data
 async function scriptSelector(jsonData, galleryGrid) {
+    const currentPage = determineCurrentPage(); 
 
-    // Get the result of the arrow function.
-    // ONLY THEN can the value be used in the comparison operator
-    const currentPageResult = currentPage(); 
-
-    if (currentPageResult === 'projects') {
+    if (currentPage === 'projects') {
+    //   await createProjectList(jsonData, listElement);
       await createProjectList(jsonData);
       console.log('projects page');
 
-    } else if (currentPageResult === 'index') {
+    } else if (currentPage === 'index') {
+        // await createGalleryItems(jsonData, galleryGrid);
         await populateGalleryContainer(jsonData, galleryGrid);
       console.log('index page');
 
-    } else if (currentPageResult === 'about') {
+    } else if (currentPage === 'about') {
       console.log('about page');
     }
 }
 
 
-function currentPage() {
+// Determine the current page and return keyword
+function determineCurrentPage() {
     const pathname = window.location.pathname;
     if (pathname.includes('/projects.html')) {
         return 'projects';
@@ -62,5 +55,16 @@ function currentPage() {
         return 'about';
     }
         return 'unknown';
-}; 
-generatePageContent();
+}
+
+// async function createProjectList(jsonData, listElement) {
+//     await jsonData.forEach(obj => {
+//         makeListItem(obj, listElement);
+//     });
+// } importing
+
+// async function createGalleryItems(jsonData, galleryGrid) {
+//     await jsonData.forEach(obj => {
+//         makeGalleryItem(obj, galleryGrid);
+//     });
+// }
