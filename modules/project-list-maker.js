@@ -1,6 +1,6 @@
 // PROJECTS PAGE 
 // Project list and page generation
-export async function createProjectList(jsonData) {
+export default async function createProjectList(jsonData) {
     const listElement = document.getElementById('projectListID');
     const listItemPromises = jsonData.map( obj => createListItems(jsonData, obj, listElement));
     await Promise.all(listItemPromises);

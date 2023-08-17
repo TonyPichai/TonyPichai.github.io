@@ -1,4 +1,4 @@
-export async function populateGalleryContainer(jsonData, galleryGrid) {
+export default async function populateGalleryContainer(jsonData, galleryGrid) {
     const galleryItemPromises = jsonData.map(obj => createGalleryItem(obj, galleryGrid));
     await Promise.all(galleryItemPromises);
 
