@@ -5,8 +5,8 @@ export async function createProjectList(jsonData) {
     const listItemPromises = jsonData.map( obj => createListItems(jsonData, obj, listElement));
     await Promise.all(listItemPromises);
 
-    const cats = document.getElementById('categories');
-    adjustCategoryDisplay(cats, 'hidden');
+    // const cats = document.getElementById('categories');
+    // adjustCategoryDisplay(cats, 'hidden');
 }
 
 
