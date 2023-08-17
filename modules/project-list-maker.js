@@ -3,7 +3,7 @@
 export async function createProjectList(jsonData) {
     const listElement = document.getElementById('projectListID');
     const listItemPromises = jsonData.map( obj => createListItems(jsonData, obj, listElement));
-    await Promise.all(listItemPromises);
+    return Promise.all(listItemPromises);
 
     // const cats = document.getElementById('categories');
     // adjustCategoryDisplay(cats, 'hidden');

@@ -1,6 +1,6 @@
 export async function populateGalleryContainer(jsonData, galleryGrid) {
     const galleryItemPromises = jsonData.map(obj => createGalleryItem(obj, galleryGrid));
-    await Promise.all(galleryItemPromises);
+    return Promise.all(galleryItemPromises);
 
     // const cats = document.getElementById('categories');
     // adjustCategoryDisplay('hidden');
