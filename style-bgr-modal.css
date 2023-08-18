@@ -193,3 +193,9 @@
 .modal-nav-links:focus { 
     color: rgb(234, 234, 234)!important;
 }
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    .nav-modal {
+        background: rgba(255, 253, 246, 0.95);
+    }
+}
