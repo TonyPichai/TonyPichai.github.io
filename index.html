@@ -18,6 +18,17 @@
 
     <!-- github Hosting -->
     <script defer type="module" async src="header.js"></script>
+    <!-- Resolving on load page -->
+    <script type="text/javascript">
+        window.onload = function() {
+            const currentURL = window.location.href;
+
+            if (!currentURL.endsWith("index.html")) {
+                const updatedURL = currentURL + "index.html";                
+                window.location.href = updatedURL;
+            }
+        };
+    </script>
 
     <title>Tony Pichai</title>
 </head>
