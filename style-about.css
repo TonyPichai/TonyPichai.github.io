@@ -8,16 +8,35 @@
     font-weight: 800;
     color: var(--colour-two);
 }
+.about::before {
+    display: none;
+}
 .about {
+    grid-row: 2;
     width: 100%;
     font-size: calc(1.3em + 1px);
 }
 
 @media screen and (min-width: 600px) {
     .text-container {
-        width: 60%;
+        width: 80%;
         margin-top: calc(10em + 10px);
-        top: -10%;
+        padding-top: 100px;
+        top: 0%;
         align-self: center;
+    }
+    .about::before {
+        display: block;
+        height: 150px;
+        width: 100%;
+        content: "";
+    }
+}
+@media screen and (min-width: 800px) {
+    .text-container {
+        padding-top: 0;
+    }
+    .about::before {
+        display: none;
     }
 }
