@@ -1,4 +1,6 @@
 .text-container {
+    grid-row: 2;
+
     font-family: var(--font-three);
     width: 60%;
     margin: 10em auto 0 auto;
@@ -12,7 +14,6 @@
     display: none;
 }
 .about {
-    grid-row: 2;
     width: 100%;
     font-size: calc(1.3em + 1px);
 }
@@ -20,16 +21,17 @@
 @media screen and (min-width: 600px) {
     .text-container {
         width: 80%;
-        margin-top: calc(10em + 10px);
+        margin-top: calc(40px + 1px);
         padding-top: 100px;
         top: 0%;
         align-self: center;
     }
     .about::before {
+        content: "";
         display: block;
+        grid-row: 1;
         height: 150px;
         width: 100%;
-        content: "";
     }
 }
 @media screen and (min-width: 800px) {
