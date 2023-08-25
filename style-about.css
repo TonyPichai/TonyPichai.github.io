@@ -1,6 +1,8 @@
 .text-container {
     grid-row: 2;
-
+    display: flex;
+    align-content: center; 
+    align-items: center;
     font-family: var(--font-three);
     width: 60%;
     margin: 10em auto 0 auto;
@@ -10,9 +12,7 @@
     font-weight: 800;
     color: var(--colour-two);
 }
-.about::before {
-    display: none;
-}
+
 .about {
     width: 100%;
     font-size: calc(1.3em + 1px);
@@ -26,19 +26,10 @@
         top: 0%;
         align-self: center;
     }
-    .about::before {
-        content: "";
-        display: block;
-        grid-row: 1;
-        height: 150px;
-        width: 100%;
-    }
+
 }
 @media screen and (min-width: 800px) {
     .text-container {
         padding-top: 0;
-    }
-    .about::before {
-        display: none;
     }
 }
