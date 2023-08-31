@@ -16,13 +16,6 @@
     font-size: 21px;
 }
 
-.image {
-    display: flex;
-    width: 100%;
-}
-img {
-    width: 100%;
-}
 
 body {
     font-family: var(--font-three);
@@ -175,6 +168,15 @@ main {
     height: 100%;
     margin: 0;
     /* height: 100%; */
+}
+.image {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+}
+img {
+    width: 100%;
 }
 
 .article {
