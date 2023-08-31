@@ -55,7 +55,7 @@ function carousel() {
         if (currSlide > 1) {
             currSlide--;
         } else {
-            currSlide = 6; // Go to the last slide
+            currSlide = 7; // Go to the last slide
         }
 
         updateParams(currSlide);
@@ -90,7 +90,7 @@ function carousel() {
         
         nextSlide = currSlide;
 
-        if (currSlide < 6) {
+        if (currSlide < 7) {
             currSlide++;
         } else {
             currSlide = 1; // Go back to the first slide
@@ -107,7 +107,7 @@ function carousel() {
     });
 
 
-    for(i = 1; i <= 6; i++) {
+    for(i = 1; i <= 7; i++) {
         const portfolioPage = document.getElementById(`pg-${i}`);
         portfolioPages.push(portfolioPage);
     }
