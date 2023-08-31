@@ -49,26 +49,21 @@ function carousel() {
         hidePages(currSlide);
         setTimeout(() => {
             hidePages(currSlide);
+            prevSlide = currSlide;
 
-        prevSlide = currSlide;
+            if (currSlide > 1) {
+                currSlide--;
+            } else {
+                currSlide = 7; // Go to the last slide
+            }
 
-        if (currSlide > 1) {
-            currSlide--;
-        } else {
-            currSlide = 7; // Go to the last slide
-        }
-
-        updateParams(currSlide);
-        console.log('backwards clicked:', currSlide);
-
-
-        location.reload();
-        }, 100); // Adjust the time as needed
+            updateParams(currSlide);
+            console.log('backwards clicked:', currSlide);
+            location.reload();
+        }, 100); 
 
         pageCount(currSlide);
-        // Page count
-        // count.innerHTML = '';
-        // count.innerHTML = currSlide;
+
     });
 
     forwards.addEventListener('click', () => {
@@ -93,16 +88,19 @@ function carousel() {
         if (currSlide < 7) {
             currSlide++;
         } else {
+            
+            setTimeout(() => {
+                let prevPg = currSlide - 1
+                hidePages(prevPg);
+                location.reload();
+            }, 100); 
+
             currSlide = 1; // Go back to the first slide
         }
 
         updateParams(currSlide);
         console.log('forwards clicked:', currSlide);
-
-        // count.innerHTML = '';
-        // count.innerHTML = currSlide;
         pageCount(currSlide);
-
         hidePages(currSlide);
     });
 
