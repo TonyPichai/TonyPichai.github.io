@@ -16,6 +16,10 @@
     font-size: 21px;
 }
 
+.image {
+    display: flex;
+    width: 100%;
+
 img {
     width: 100%;
 }
