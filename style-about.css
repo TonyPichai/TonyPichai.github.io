@@ -18,6 +18,10 @@
     width: 100%;
     font-size: calc(1.3em + 1px);
 }
+.contact {
+    font-size: calc(1.5em + 1px);
+    color: var(--colour-two);
+}
 
 @media screen and (min-width: 600px) {
     .text-container {
