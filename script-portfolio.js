@@ -2,6 +2,7 @@
 const count = document.getElementById('count');
 count.innerHTML = 1;
 const portfolioPages = [];
+const pgTotal = 9;
 
 function hidePages(currSlide) {
     for(let i = 0; i< portfolioPages.length; i++) {
@@ -54,7 +55,7 @@ function carousel() {
             if (currSlide > 1) {
                 currSlide--;
             } else {
-                currSlide = 7; // Go to the last slide
+                currSlide = pgTotal; // Go to the last slide
             }
 
             updateParams(currSlide);
@@ -85,7 +86,7 @@ function carousel() {
         
         nextSlide = currSlide;
 
-        if (currSlide < 7) {
+        if (currSlide < pgTotal) {
             currSlide++;
         } else {
             
@@ -107,7 +108,7 @@ function carousel() {
     });
 
 
-    for(i = 1; i <= 7; i++) {
+    for(i = 1; i <= pgTotal; i++) {
         const portfolioPage = document.getElementById(`pg-${i}`);
         portfolioPages.push(portfolioPage);
     }
