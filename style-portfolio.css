@@ -16,6 +16,10 @@
     font-size: 21px;
 }
 
+img {
+    width: 100%;
+}
+
 body {
     font-family: var(--font-three);
     font-weight: 300;
