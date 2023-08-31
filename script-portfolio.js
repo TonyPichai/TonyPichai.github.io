@@ -93,9 +93,10 @@ function carousel() {
                 let prevPg = currSlide - 1
                 hidePages(prevPg);
                 location.reload();
+                currSlide = 1; // Go back to the first slide
+
             }, 100); 
 
-            currSlide = 1; // Go back to the first slide
         }
 
         updateParams(currSlide);
