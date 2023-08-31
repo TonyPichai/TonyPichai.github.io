@@ -50,8 +50,37 @@ main {
     align-items: center;
     z-index: 99;
   }
-  
+  .loader-overlay::before {
+    content: "just a sec...";
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    animation: colorCycle 6s linear infinite, sizePulse 2s ease-in-out infinite;
+    position: absolute;
+    top: 50%; /* Position at the center vertically */
+    left: 50%; /* Position at the center horizontally */
+    transform: translate(-50%, -50%); /* Center the pseudo-element */
+    z-index: 1; /* Place the pseudo-element in front of the canvas */
+}
 
+@keyframes colorCycle {
+    0%,20%,40%,60%,80%,100% {
+        color: black;
+    }
+    10%,30%,50%,70%,90% {
+        color: white;
+    }
+}
+
+@keyframes sizePulse {
+    0%, 100% {
+        font-size: 1rem; /* Initial font size */
+    }
+    50% {
+        font-size: 1.2rem; /* Max font size during pulse */
+    }
+}
 
   canvas {
     display: flex;
