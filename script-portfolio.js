@@ -14,7 +14,7 @@ function hidePages(currSlide) {
 }
 // function to update the URL params without reloading the page
 function updateParams(currSlide) {
-    const newSlide = `index-carousel.html?index=${currSlide}`;
+    const newSlide = `portfolio.html?index=${currSlide}`;
     history.pushState(null, '', newSlide);
 }
 // Function to update the slide counter
@@ -120,11 +120,11 @@ window.onload = function() {
     const overlay = document.querySelector('.loader-overlay')
 
     // checking if url contains index-carousel.
-    if (!currentURL.includes("index-carousel.html")) {
+    if (!currentURL.includes("portfolio.html")) {
         const slideNumInit = 1;
         updateParams(slideNumInit);
 
-        const slide = `index-carousel.html?index=${slideNumInit}`;
+        const slide = `portfolio.html?index=${slideNumInit}`;
         history.pushState(null, '', slide);
         // window.location.href = slide;
         updateContent(slideNumInit);
