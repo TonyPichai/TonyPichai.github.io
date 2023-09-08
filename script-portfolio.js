@@ -42,12 +42,45 @@ function carousel() {
 
     console.log('the current slide is: ', currSlide);
 
+    // Popstate event listener to detect navigation changes
+    window.addEventListener('popstate', (event) => {
+        if (event.state) {
+            console.log('Somehow navigated forwards...');
+        } else {
+            if(currSlide === 1) {
+                window.location.href = 'index.html';
+            }
+            console.log('Navigated backwards');
+            const overlay = document.querySelector('.loader-overlay');
+            overlay.style.display = 'flex';
+            
+            hidePages(currSlide);
+            
+            setTimeout(() => {
+                hidePages(currSlide);
+                prevSlide = currSlide;
+    
+                if (currSlide > 1) {
+                    currSlide--;
+                } else {
+                    currSlide = pgTotal; // Go to the last slide
+                }
+    
+                updateParams(currSlide);
+                console.log('backwards clicked:', currSlide);
+                location.reload();
+            }, 100); 
+    
+            pageCount(currSlide);
+        }
+    });
+
     backwards.addEventListener('click', () => {
         const overlay = document.querySelector('.loader-overlay');
         overlay.style.display = 'flex';
 
-
         hidePages(currSlide);
+
         setTimeout(() => {
             hidePages(currSlide);
             prevSlide = currSlide;
@@ -89,7 +122,6 @@ function carousel() {
         if (currSlide < pgTotal) {
             currSlide++;
         } else {
-            
             setTimeout(() => {
                 let prevPg = currSlide - 1
                 hidePages(prevPg);
@@ -97,8 +129,6 @@ function carousel() {
 
             }, 100); 
             currSlide = 1; // Go back to the first slide
-
-
         }
 
         updateParams(currSlide);

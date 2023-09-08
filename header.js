@@ -14,16 +14,14 @@ async function generatePageContent() {
         // Github file path!!!
         const response = await fetch('/modules/content.json');
 
-        const jsonData = await response.json();
+        const jsonData = await response.json(); // Convert string to json
 
-        // Get the gallery grid element
-        const galleryGrid = document.getElementById('galleryAutoGrid');
-
-        await scriptSelector(jsonData, galleryGrid);
+        await scriptSelector(jsonData);
 
     }
     catch (error) {
         console.error('unable to access content:', error);
+        window.location.reload();
     }
 }
 
