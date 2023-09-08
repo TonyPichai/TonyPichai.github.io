@@ -101,15 +101,15 @@
     },
     {
         "id": "8",
-        "title": "Technically, natural...",
+        "title": "Natural Technology",
         "subtitle": "GSA | Interactive Video Sculpture",
         "projectType": "Artwork",
         "association": "GSA",
         "roles": "Concept, Video Editing, Programming, Technologist",
         "technology": "Processing, After Effects, OpenCV, Wekinator, PoseNet",
         "feature-pg-position": "",
-        "mainImage": "./modules/media/technically-natural/gallery.jpg",
-        "mainText": "'Technically, Natural' is a part of a series of interactive video sculptures created for my undergraduate degree showcase. This installation explores the juxtaposition of natural landscapes and human constructions, abrasively blending scenes and patterns of life. The artwork consists of two vertical video screens, each displaying a stream of videos. One screen showcases the patterns in natural world, while the other displays footage of patterns of human construction. Through pixel processing and alternated buffer rates, I merge the clips within each video stream, creating a captivating fusion of imagery that alternates between the two channels. A camera positioned in the middle of the installation that detects the presence of viewers. This triggers dynamic changes in the displayed videos, ensuring that the visuals respond to the viewer's presence. 'Technically, Natural' invites viewers to contemplate the relationship between nature and human creations, blurring the boundaries between the organic and the artificial. By intertwining these contrasting elements, the installation prompts reflection on our interactions with the environment and the symbiotic interplay between the natural world and human creation.",
+        "mainImage": "./modules/media/natural-technology/gallery.jpg",
+        "mainText": "'Natural Technology' is a part of a series of interactive video sculptures created for my undergraduate degree showcase. This installation explores the juxtaposition of natural landscapes and human constructions, abrasively blending scenes and patterns of life. The artwork consists of two vertical video screens, each displaying a stream of videos. One screen showcases the patterns in natural world, while the other displays footage of patterns of human construction. Through pixel processing and alternated buffer rates, I merge the clips within each video stream, creating a captivating fusion of imagery that alternates between the two channels. A camera positioned in the middle of the installation that detects the presence of viewers. This triggers dynamic changes in the displayed videos, ensuring that the visuals respond to the viewer's presence. 'Technically, Natural' invites viewers to contemplate the relationship between nature and human creations, blurring the boundaries between the organic and the artificial. By intertwining these contrasting elements, the installation prompts reflection on our interactions with the environment and the symbiotic interplay between the natural world and human creation.",
         "video":"https://player.vimeo.com/video/857498887?h=ce3310f13e"
     },
     {
