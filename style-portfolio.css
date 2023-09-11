@@ -59,10 +59,10 @@ main {
     text-transform: uppercase;
     animation: colorCycle 6s linear infinite, sizePulse 2s ease-in-out infinite;
     position: absolute;
-    top: 50%; /* Position at the center vertically */
-    left: 50%; /* Position at the center horizontally */
-    transform: translate(-50%, -50%); /* Center the pseudo-element */
-    z-index: 1; /* Place the pseudo-element in front of the canvas */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
 @keyframes colorCycle {
