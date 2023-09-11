@@ -225,25 +225,18 @@
     text-align: left;
 }
 
-.video-container {
-    width: 100%;
+.article-video {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio (for 1920x1080 video) */
-    overflow: hidden;
-    padding: 0;
-
-    /* max-height: 50%; */
-    /* justify-content: space-around; */
-}
-
-.video-container iframe {
-    position: relative;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    margin: 0;
-    /* height: 100%; */
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (for 1920x1080 video) */
+    overflow: hidden;
+}
+
+.article-video iframe {
+    position: absolute;
+    border: none;
+    /* border: 2px solid green; */
 }
 
 /* %%%%%%%%%%%%%% !!!!!!!!!!MEDIA QUERIES!!!!! %%%%%%%%%%%%%% */
@@ -337,11 +330,9 @@
     padding: 0;
     text-align: center;
     font-family: cy, sans-serif;
-    /* border: 1px solid red; */
     align-items: center;
     align-self: flex-end;
     justify-self: flex-end;
-    /* border: 1px solid orange; */
 }
 
     /* %%%%%%%%%%%% MAIN PAGE CONTENT %%%%%%%%%%%%%% */

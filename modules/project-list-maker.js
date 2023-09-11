@@ -196,17 +196,17 @@ const generatePage = async (obj) => {
 
     //looking for video
     if (currVideo) {
-        const videoContainer = document.createElement('div');
+        const videoContainer = document.getElementById('articleVideo');
         const iFrame = document.createElement('iframe');
 
+        iFrame.src = currVideo;
         iFrame.innerHTML="";
         iFrame.style.title = "vimeo-player"
-        iFrame.src = currVideo;
         iFrame.style.frameborder = "0"
         iFrame.style.allowfullscreen = true;
+
         videoContainer.classList.add('video-container');
         videoContainer.appendChild(iFrame);
-        articleVideo.appendChild(videoContainer);
 
         videoFlag = true;
     }
