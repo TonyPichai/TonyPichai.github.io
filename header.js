@@ -21,7 +21,11 @@ async function generatePageContent() {
     }
     catch (error) {
         console.error('unable to access content:', error);
+
+        setTimeout(() => {
         window.location.reload();
+        }, 1000); 
+        // window.location.href = 'index.html';
     }
 }
 
