@@ -6,6 +6,7 @@ export async function createProjectList(jsonData) {
     return Promise.all(listItemPromises);
 }
 
+
 // Add a popstate event listener to detect navigation back
 window.addEventListener('popstate', () => {
     const currentURL = new URL(window.location.href);
@@ -154,14 +155,69 @@ function generatePageFromIndex(jsonData) {
     }
 }
 
+const moveCarousel = (loadedImages) => {
+    let currImg = 0;
+    const carousel = document.getElementById("carouselImg");
+    const left = document.getElementById("carouselLeft");
+    const right = document.getElementById("carouselRight");
+
+    left.addEventListener('click', () => {
+        carousel.removeChild(loadedImages[currImg]);
+      
+        currImg = (currImg - 1 + loadedImages.length) % loadedImages.length;
+        console.log('left:', currImg);
+        carousel.appendChild(loadedImages[currImg]);
+    });
+    right.addEventListener('click', () => {
+        carousel.removeChild(loadedImages[currImg]);
+
+        currImg = (currImg + 1 + loadedImages.length) % loadedImages.length;
+        console.log('right:', currImg);
+        carousel.appendChild(loadedImages[currImg]);
+    });
+}
+
+let imgFlag = false;
+
+// Creating a carousel
+function generateCarousel(obj) {
+    const carousel = document.getElementById("carouselImg");
+    const galleryImages = obj.galleryImages; // The array
+    const loadedImages = [];
+
+    for(let i = 0; i < galleryImages.length; i++) {
+        if (imgFlag === true) {
+            return;
+        }
+        // per image basis
+        const imageURL = galleryImages[i];
+
+        const img = new Image();
+        
+        img.src = imageURL;
+
+        // carousel.appendChild(img);
+        // add to array
+        loadedImages.push(img);
+
+    }
+    imgFlag = true;
+
+
+    carousel.appendChild(loadedImages[0]);
+    moveCarousel(loadedImages);
+}
+
 // Generate project page content
 // Triggered by eventListener 'click' on createListItem
 let videoFlag = false;
 
 const generatePage = async (obj) => {
     console.log("%c generatePage triggered", 'color: red');
-
     console.log('Object index parameter:', obj.id);
+
+    const video = document.getElementById('articleVideo');
+    const carousel = document.getElementById('articleCarousel');
     
     // Hide the projects menu
     const projectsMenu = document.getElementById('projectMenuID');
@@ -187,10 +243,18 @@ const generatePage = async (obj) => {
     
     createCategories(obj);
     createHero(obj);
+    
+    if(obj.galleryImages != null){
+        carousel.style.display = 'flex';
+        generateCarousel(obj);
+    } else {
+        carousel.style.display = 'none';
+    }
 
     let currVideo;
 
     if(obj.video !=null && !videoFlag) {
+        video.style.display = 'block';
         currVideo = obj.video;
     } 
 
