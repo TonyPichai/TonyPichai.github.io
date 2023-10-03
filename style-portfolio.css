@@ -90,10 +90,13 @@ main {
     height: 100vh;
 }
 .nav-name {
-    margin-left: -55em;
+    display: flex;
+    width: 100%;
+    justify-content: left;
 }
 .name {
-    width: 19%;
+    width: 10%;
+    margin-left: 1em;
     font-family: var(--font-one);
     color: var(--colour-two);
     font-weight: 300;
