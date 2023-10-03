@@ -181,3 +181,12 @@ window.onload = function() {
         count.innerHTML = currSlide;
     }
 };
+
+function nameNav() {
+    const name = document.getElementById("nameID")
+
+    name.addEventListener('click', (event) => {           
+        window.location.href = 'index.html';
+    })
+}
+nameNav();

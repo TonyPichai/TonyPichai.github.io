@@ -5,8 +5,9 @@
 .gallery {
     display: grid;
     flex: 1;
-    margin-top: 1em;
-    padding: 6em;
+    margin: -3em auto;
+    padding: 0 6em;
+    padding-top: 3em;
     width: 100%;
 }
 /* .gallery .container {
@@ -17,7 +18,6 @@
     display: grid;
     padding: 0;
 }
-
 
 .gallery-item {
     display: flex;
@@ -206,8 +206,9 @@ footer {
         width: 100%;
         height: 100%;
         margin: 0 auto;
-        gap: 2rem;
-        padding: 0.5em;
+        row-gap: 0rem;
+        column-gap: 3rem;
+        padding: 2em 5em;
         /* grid-template-columns: repeat(auto-fit, minmax(min(14rem, 100%), 2fr)); */
         grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
     }

@@ -66,3 +66,34 @@ function currentPage() {
         return 'unknown';
 }; 
 generatePageContent();
+
+function closeModal() {
+    // document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById("modalID");
+        const modalCheckbox = document.getElementById("burger-button");
+
+        document.addEventListener('click', (event) => {
+            if(modalCheckbox.checked && !modal.contains(event.target)) {
+                const onMouseUp = () => {
+                    modalCheckbox.checked = false;
+                    // modalCheckbox.checked = !modalCheckbox.checked;
+                    console.log('Clicked off modal')
+                };
+
+                document.addEventListener('mouseup', onMouseUp);
+            }
+        });
+    // });
+}
+closeModal();
+
+function nameNav() {
+    const name = document.getElementById("nameID")
+
+    name.addEventListener('click', (event) => {           
+        window.location.href = 'index.html';
+    })
+}
+nameNav();
+
+

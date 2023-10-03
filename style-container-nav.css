@@ -9,6 +9,9 @@
     --font-one: cy, sans-serif;
     --font-two: swear-display-cilati, sans-serif;
     --font-three: "neue-haas-unica-Thin", sans-serif;
+    --shadow-red: 0em 0em 20px rgb(134, 9, 9), 0em 0em 3px rgb(0, 0, 0), 0em 0em 40px rgb(211, 127, 1);
+    --shadow-green: 0em 0em 15px rgb(12, 101, 46), 0em 0em 4px rgb(0, 0, 0), 0em 0em 40px rgba(18, 215, 93, 1);
+    --shadow-blue: 0em 0em 15px rgb(12, 43, 101), 0em 0em 4px rgb(0, 0, 0), 0em 0em 40px rgb(18, 179, 215);
     font-size: 21px;
 }
   
@@ -93,15 +96,19 @@ img {
     font-size: 1.5em;
     margin: 0;
     font-family: var(--font-one);
-}
-
-.name-container .name {
     position: absolute;
     top: 38%;
-    font-size: 1.5em;
-    margin: 0;
     color: var(--colour-two);
     font-family: var(--font-one);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
+}
+
+.name:hover,
+.name:focus {
+    text-shadow:var(--shadow-red);
+    transform: scale(1.02);
+    color: white;
+    font-weight: 500;
 }
 
 .nav-footer,
@@ -146,22 +153,18 @@ img {
         height: 100%;
         width: 100%;
         flex-direction: column;
-        justify-content: space-between;
-    }
-    .base-grid-col-1 > * {
-        align-content: space-between;
     }
 
     .base-grid-col-1 {
         grid-column: 1;
-        /* background: linear-gradient(90deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0)); */
-        /* border: 2px solid black; */
     }
+
     .base-grid-col-2 {
         display: flex;
         grid-column: 2;
         width: 100%;
-        overflow: auto;
+        margin: 2em;
+        padding: 1.5em;
         overflow: auto;
         scrollbar-width: none;
     }
@@ -188,24 +191,23 @@ img {
     /**** LEFT COLUMN ****/
     .sidebar-left {
         text-align: left;
-        padding-left: var(--sidebar-padding);
-        /* border: 1px solid black; */
-        height: 100%
     }
     .nav-name {
         display: flex;
         align-self: flex-start;
-        margin-left: var(--sidebar-padding);
-        padding-left: var(--sidebar-padding);
+        margin-left: 0;
+        padding-left: 0;
         max-width: 100px; 
         z-index: inherit;
     }
-    .nav-name > .name {
+    .name {
+        display: flex;
         font-size: 1.8em;
         font-weight: 300;
-        padding: 0;
         margin: 0 auto;
         color: var(--colour-two);
+        left: -400%;
+        justify-content: flex-start;
     }
     .nav-footer * {
         /* text-decoration: none; */

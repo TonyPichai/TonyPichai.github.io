@@ -35,7 +35,7 @@ main {
     /* align-content: space-between; */
     justify-content: center;
     height: 100vh;
-    /* border: 4px solid black; */
+    border: 4px solid black;
 }
 
 .loader-overlay {
@@ -89,6 +89,23 @@ main {
     width: 100vw;
     height: 100vh;
 }
+.nav-name {
+    margin-left: -55em;
+}
+.name {
+    width: 19%;
+    font-family: var(--font-one);
+    color: var(--colour-two);
+    font-weight: 300;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.3s;
+}
+.name:hover,
+.name:focus {
+    text-shadow: 0em 0em 20px rgb(134, 9, 9), 0em 0em 3px rgb(0, 0, 0), 0em 0em 40px rgb(211, 127, 1);
+    transform: scale(1.02);
+    color: white;
+    font-weight: 500;
+}
 
 .pg {
     display: grid;
@@ -99,13 +116,9 @@ main {
     width: 100%;
     /* border: 5px solid yellow; */
     margin-bottom: 0;
-    height: 100vh;
     align-content: center;
     overflow: hidden;
-    height: fit-content;
-    height: 90vh;
-
-
+    height: 65vh;
 }
 
 .content {
@@ -240,14 +253,14 @@ img {
     cursor: pointer;
     font-size: calc(3.1em - 1em);
     font-weight: bolder;
-    text-shadow: 3px 4px 3px rgba(109, 109, 109, 0.5);
+    text-shadow: -0.1em 0em 10px rgba(12, 101, 46), 0.2em 0.1em 2px rgba(0, 0, 0, 0.4), 0em 0em 15px rgba(18, 215, 93, 1);
 }
 #forwards:hover,
 #forwards:active {
     cursor: pointer;
     font-size: calc(3.1em - 1em);
     font-weight: bolder;
-    text-shadow: -1px 4px 3px rgba(109, 109, 109, 0.5);
+    text-shadow: 0.1em 0em 10px rgb(12, 101, 46), -0.2em 0.1em 2px rgba(0, 0, 0, 0.4), 0em 0em 15px rgba(18, 215, 93, 1);
 }
 .counter * {
     font-size: calc(3em - 1em);

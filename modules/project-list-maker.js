@@ -7,7 +7,7 @@ export async function createProjectList(jsonData) {
 }
 
 
-// Add a popstate event listener to detect navigation back
+// Add a popstate event listener for backwards navigation use case
 window.addEventListener('popstate', () => {
     const currentURL = new URL(window.location.href);
     if (currentURL.searchParams.has('index')) {
@@ -68,9 +68,14 @@ function displayMediaQuery() {
         categories.style.display = 'inline-flex';
     }
 }
-  
-// On resize trigger the display adjustment Media Query
-window.addEventListener('resize', displayMediaQuery);
+function pathQueryOnMediaQuery() {
+    const pathname = window.location.pathname;
+    if (pathname.includes('/projects.html')) {
+        window.addEventListener('resize', displayMediaQuery);
+    } else {
+        return
+    }
+}
 
 // Create the categories section
 function createCategories(obj) {
@@ -284,13 +289,12 @@ function triggerPageBuilding(jsonData, obj, listElement) {
 
     generateMenu(obj,listElement);
     generatePageFromIndex(jsonData);
-    // generatePage(obj); // This makes navigation from the gallery and the menu work.
-    // NEXT add a URL parameter when navigating from the menu
-    // THEN use the URL parameter in a method to the menu 
 
     console.log('Trigger: projectContentFromIndex');
 
 }
+
+pathQueryOnMediaQuery();
 
 
 // MODAL MENU STYLE
@@ -302,30 +306,3 @@ function triggerPageBuilding(jsonData, obj, listElement) {
 //     item.style.color = 'white';
 //     console.log('style change');
 // });
-
-
-
-
-
-        // PARALLAX SCROLL 
-    // function positionHeroText () {
-    //     var parallaxElement = document.getElementById('heroTextContainer');
-    //     var initialPosition = parallaxElement.getBoundingClientRect().top;
-    //     var containerHeight = parallaxElement.parentElement.clientHeight;
-    //     var maxTranslation = containerHeight * 0.5;
-
-    //     window.addEventListener('scroll', function() {
-    //       // Parallax effect calculation
-    //       let scrollPosition = window.pageYOffset;
-    //       let parallaxSpeed = 0.2; // Adjust this value for the desired parallax effect
-    //       console.log('Initial position:', initialPosition);
-    //       var translation = scrollPosition * parallaxSpeed;
-    //       var newPosition = initialPosition + translation;
-
-    //       // limit the movement
-    //       newPosition = Math.max(-maxTranslation, Math.min(0, newPosition));
-    //       console.log('Translation:', translation);
-    //       console.log('New Position:', newPosition);
-    //       parallaxElement.style.transform = 'translateY(' + newPosition + 'px)';
-    //     });
-    // }
