@@ -10,9 +10,9 @@ async function generatePageContent() {
         // Get data as string and convert to usable json
 
         // Local file path
-        // const response = await fetch('modules/content.json');
+        const response = await fetch('modules/content.json');
         // Github file path!!!
-        const response = await fetch('/modules/content.json');
+        // const response = awaitÆ fetch('/modules/content.json');
 
         const jsonData = await response.json(); // Convert string to json
 
@@ -67,29 +67,74 @@ function currentPage() {
 }; 
 generatePageContent();
 
+// function closeModal() {
+//     const modalCheckbox = document.getElementById("burger-button");
+//     const brgClose = document.querySelector(".burger-nav-icon");
+//     let isModalOpen = false;
+
+//     // Function to open or close the modal when clicking the burger-nav-icon
+//     function toggleModal(event) {
+//         if (!modalCheckbox.contains(event.target)) {
+//             if (!isModalOpen) {
+//                 modalCheckbox.checked = true;
+//                 console.log('Opened modal');
+//             } else {
+//                 modalCheckbox.checked = false;
+//                 console.log('Closed modal');
+//             }
+//             isModalOpen = !isModalOpen;
+//         }
+//     }
+
+//     // Function to close the modal when clicking outside of the modal
+//     function closeOnOutsideClick(event) {
+//         if (modalCheckbox.checked && !modalCheckbox.contains(event.target)) {
+//             modalCheckbox.checked = false;
+//             console.log('Closed modal');
+//             console.log('Clicked off modal');
+//             isModalOpen = false;
+//         }
+//     }
+
+//     // Add event listeners
+//     brgClose.addEventListener('click', toggleModal);
+//     document.addEventListener('click', closeOnOutsideClick);
+// }
 function closeModal() {
-    // document.addEventListener('DOMContentLoaded', () => {
-        const modal = document.getElementById("modalID");
-        const modalCheckbox = document.getElementById("burger-button");
+    const modalCheckbox = document.getElementById("burger-button");
+    const brgClose = document.querySelector(".burger-nav-icon");
 
-        document.addEventListener('click', (event) => {
-            if(modalCheckbox.checked && !modal.contains(event.target)) {
-                const onMouseUp = () => {
-                    modalCheckbox.checked = false;
-                    // modalCheckbox.checked = !modalCheckbox.checked;
-                    console.log('Clicked off modal')
-                };
+    // Function to open or close the modal by toggling the checkbox's checked state
+    // Timeout to deal with timing issue between css animation for checked state with JS setting the css checked state
+    function toggleModal() {
+        setTimeout(() => {
+            modalCheckbox.checked = !modalCheckbox.checked;
+        }, 10);
+    }
+    // Function for close btn
+    function close(event) {
+        if (modalCheckbox.checked && !modalCheckbox.contains(event.target)) {
+            toggleModal(); // Toggle the modal to close
+            console.log('close button');
+        }
+    }
+    // Function to close the modal when clicking outside of the modal
+    function closeOnOutsideClick(event) {
+        if (modalCheckbox.checked && !modalCheckbox.contains(event.target)) {
+            toggleModal(); // Toggle the modal to close
+            console.log('off click close');
+        }
+    }
 
-                document.addEventListener('mouseup', onMouseUp);
-            }
-        });
-    // });
+    // Add event listeners
+    brgClose.addEventListener('click', close);
+    document.addEventListener('click', closeOnOutsideClick);
 }
 closeModal();
 
+
 function nameNav() {
     const name = document.getElementById("nameID")
-
     name.addEventListener('click', (event) => {           
         window.location.href = 'index.html';
     })
