@@ -67,39 +67,6 @@ function currentPage() {
 }; 
 generatePageContent();
 
-// function closeModal() {
-//     const modalCheckbox = document.getElementById("burger-button");
-//     const brgClose = document.querySelector(".burger-nav-icon");
-//     let isModalOpen = false;
-
-//     // Function to open or close the modal when clicking the burger-nav-icon
-//     function toggleModal(event) {
-//         if (!modalCheckbox.contains(event.target)) {
-//             if (!isModalOpen) {
-//                 modalCheckbox.checked = true;
-//                 console.log('Opened modal');
-//             } else {
-//                 modalCheckbox.checked = false;
-//                 console.log('Closed modal');
-//             }
-//             isModalOpen = !isModalOpen;
-//         }
-//     }
-
-//     // Function to close the modal when clicking outside of the modal
-//     function closeOnOutsideClick(event) {
-//         if (modalCheckbox.checked && !modalCheckbox.contains(event.target)) {
-//             modalCheckbox.checked = false;
-//             console.log('Closed modal');
-//             console.log('Clicked off modal');
-//             isModalOpen = false;
-//         }
-//     }
-
-//     // Add event listeners
-//     brgClose.addEventListener('click', toggleModal);
-//     document.addEventListener('click', closeOnOutsideClick);
-// }
 function closeModal() {
     const modalCheckbox = document.getElementById("burger-button");
     const brgClose = document.querySelector(".burger-nav-icon");
