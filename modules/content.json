@@ -1,6 +1,101 @@
 [
     {
         "id": "0",
+        "title": "touchy-feely",
+        "subtitle": "New Perspectives | Interactive Multi-Media Video Game",
+        "projectType": "Collaborative Art Installation",
+        "association": "UAL, New-Perspectives",
+        "roles": "Conceptual Development, 3D Fabrication, 3D Modelling, Programming, Electronics",
+        "technology": "Unreal Engine, Arduino",
+        "feature-pg-position": "",
+        "mainImage": "./modules/media/touchy-feely/touchy-feely.jpg",
+        "galleryImages": [
+            "./modules/media/touchy-feely/1.jpg",
+            "./modules/media/touchy-feely/2.jpg",
+            "./modules/media/touchy-feely/3.jpg",
+            "./modules/media/touchy-feely/4.jpg",
+            "./modules/media/touchy-feely/5.jpg",
+            "./modules/media/touchy-feely/6.jpg",
+            "./modules/media/touchy-feely/7.jpg",
+            "./modules/media/touchy-feely/8.jpg",
+            "./modules/media/touchy-feely/touchy-feely.jpg"
+        ],
+        "mainText": "'Touchy Feely' is a group project that emerged from my master's program and was presented at a group show. \n The project delved into the realm of childhood sensory experiences, offering a unique perspective on the uninhibited curiosity and imagination of children at play. \n Our objective was to challenge conventional notions of game controller interaction by utilising the innocent and inquisitive nature with which children explore the world and emulating them in our designs. Through this playful approach, we developed innovative haptic controllers and a 3D rendered game world that captured the essence of our own childhood experiences. We crafted a diverse range of controllers utilising technologies such as capacitive touch, state triggers, piezo sensors, and potentiometers. These controls established a dialogue between participants and the interactive 3D world, inviting them to engage and respond to the virtual environment. \n 'Touchy Feely' aimed to ignite a sense of nostalgia and connection to our shared childhoods, encouraging participants to embrace the joy of exploration and discovery. By challenging traditional game controller conventions, we sought to create an immersive experience that encouraged a deeper sense of connection to the imagination, going beyond the limitations of conventional gameplay. \n Overall, the project celebrated the power of play and harnessed technology to evoke the wonder and enchantment of childhood, ultimately sparking reflection on the transformative role of interactive experiences in our lives.",
+        "video":"https://player.vimeo.com/video/858800863?h=df538d3466"
+    },
+    {
+        "id": "1",
+        "title": "You Say Tory, We Say Party",
+        "subtitle": "Social Critique | Computer Game",
+        "projectType": "Computer Game",
+        "association": "UAL",
+        "roles": "Concept, Game Logic",
+        "technology": "Javascript",
+        "feature-pg-position": "",
+        "mainImage": "./modules/media/partyGate/partyGate_1.jpg",
+        "galleryImages":[],
+        "mainText": "PLAY ABOVE. The date is December 2020 and London is in the depth of lockdown. Can you visit your Grandma in the hospital before Boris Johnson makes it to a wine and cheese party at 10 Downing Street? Shouldn’t be too hard, right? That is, as long as the same rules apply to everyone… ",
+        "video":"https://friendly-engelbart-a27766.netlify.app/"
+    },
+    {
+        "id": "2",
+        "title": "Artificial Yoga",
+        "subtitle": "UAL | Learning Project",
+        "projectType": "University Project",
+        "association": "UAL",
+        "roles": "AI Training, Model Selection, Data Cleaning",
+        "technology": "Generative Adversarial Networks, Python, Pytorch",
+        "feature-pg-position": "",
+        "mainImage": "./modules/media/Artificial-yoga/artificial-yoga_1.jpg",
+        "galleryImages": [
+            "./modules/media/Artificial-yoga/artificial-yoga_1.jpg",
+            "./modules/media/Artificial-yoga/artificial-yoga_2.jpg",
+            "./modules/media/Artificial-yoga/artificial-yoga_3.jpg"
+        ],
+        "mainText": "'Artificial Yoga' emerged as a result of my post-graduate studies focused on the development of Machine Learning (ML) models and AI. \n The project involves generative image creation through the fine-tuning of the ML styleGan2 model using Python programming. The primary objective of this experiment was to challenge the model by providing it with a dataset that would pose difficulties in reproduction. By doing so, I aimed to explore the boundaries of the ML model's capabilities and push its creative limits. \n Building upon this initial exploration, the next phase of my work will involve integrating this trained model with another, allowing for the interpolation of results. This step opens up exciting possibilities for blending the outputs of different ML models, creating unique and hybrid visual outcomes. 'Artificial Yoga' represents an ongoing exploration into the intersection of art, technology, and AI. \n By leveraging ML techniques and pushing the boundaries of generative image creation, this ongoing project aims to expand my toolkit for creative expression through exploring AI's artistic potential."
+    },
+    {
+        "id": "3",
+        "title": "Natural Technology",
+        "subtitle": "GSA | Interactive Video Sculpture",
+        "projectType": "Artwork",
+        "association": "GSA",
+        "roles": "Concept, Video Editing, Programming, Technologist",
+        "technology": "Processing, After Effects, OpenCV, Wekinator, PoseNet",
+        "feature-pg-position": "",
+        "mainImage": "./modules/media/natural-technology/gallery.jpg",
+        "galleryImages": [
+            "modules/media/natural-technology/1.jpg",
+            "modules/media/natural-technology/2.jpg",
+            "modules/media/natural-technology/3.jpg",
+            "modules/media/natural-technology/gallery.jpg",
+            "modules/media/natural-technology/studio.jpg",
+            "modules/media/natural-technology/testing.jpg"
+        ],
+        "mainText": "'Natural Technology' is a part of a series of interactive video sculptures created for my undergraduate degree showcase. \n This installation explores the juxtaposition of natural landscapes and human constructions, abrasively blending scenes and patterns of life. \n The artwork consists of two vertical video screens, each displaying a stream of videos. One screen showcases the patterns in natural world, while the other displays footage of patterns of human construction. \n Through pixel processing and alternated buffer rates, I merge the clips within each video stream, creating a captivating fusion of imagery that alternates between the two channels. A camera positioned in the middle of the installation that detects the presence of viewers. This triggers dynamic changes in the displayed videos, ensuring that the visuals respond to the viewer's presence. \n'Technically, Natural' invites viewers to contemplate the relationship between nature and human creations, blurring the boundaries between the organic and the artificial. By intertwining these contrasting elements, the installation prompts reflection on our interactions with the environment and the symbiotic interplay between the natural world and human creation.",
+        "video":"https://player.vimeo.com/video/857498887?h=ce3310f13e"
+    },
+    {
+        "id": "4",
+        "title": "In the eyes of the Machine",
+        "subtitle": "New Designers | Interactive Video Sculpture",
+        "projectType": "Artwork",
+        "association": "GSA",
+        "roles": "Concept, Programming, Technologist",
+        "technology": "Processing, OpenCV, Syphon, Projection Mapping",
+        "feature-pg-position": "",
+        "mainImage": "./modules/media/eyesOfMachine/eyesOfMachine.jpg",
+        "galleryImages": [
+            "./modules/media/eyesOfMachine/cctv.jpg",
+            "./modules/media/eyesOfMachine/crt.jpg",
+            "./modules/media/eyesOfMachine/demo-setup.jpg",
+            "./modules/media/eyesOfMachine/eyesOfMachine.jpg"
+        ],
+        "mainText": "'In the Eyes of Machines' is one of several interactive video sculptures created for my undergraduate degree showcase. \n This particular work focuses on the themes of surveillance and identity. \n Comprised of a variable-sized projection screen measuring, a repurposed analogue CCTV camera, computer vision technology and some custom written code, this video sculpture functions as a feedback loop between the screen and the CCTV camera, capturing and recapturing users' faces. \n Positioned between the camera and the projection screen, visitors place themselves directly within the artwork, where their captured images contribute unique elements to the piece. By leveraging the quirks and inaccuracies of the technology involved, 'In the Eyes of Machines' aims to amplify and utilise these nuances to create a captivating live interactive video sculpture, inviting viewers to contemplate the complexities of surveillance, identity, and its intersection in the modern world.",
+        "video":"https://player.vimeo.com/video/549297872?h=62470bee73"
+    },
+    {
+        "id": "5",
         "title": "A2B",
         "subtitle": "GVVT | Museum Sculpture",
         "projectType": "Museum Installation",
@@ -25,24 +120,42 @@
         "video": "https://player.vimeo.com/video/402236327?h=c20483a6e3"
     },
     {
-        "id": "1",
-        "title": "Artificial Yoga",
-        "subtitle": "UAL | Learning Project",
-        "projectType": "University Project",
-        "association": "UAL",
-        "roles": "AI Training, Model Selection, Data Cleaning",
-        "technology": "Generative Adversarial Networks, Python, Pytorch",
+        "id": "6",
+        "title": "Narrative Machines",
+        "subtitle": "New Designers | Interactive Video Sculpture",
+        "projectType": "Artwork",
+        "association":"GSA, New Designers",
+        "roles": "Concept, Programming, Data Cleaning, 3D Fabrication, Video Editing, Embedded Electronics",
+        "technology": "Arduino, Teensy, Processing, After Effects, RIta (Markov Chains)",
         "feature-pg-position": "",
-        "mainImage": "./modules/media/Artificial-yoga/artificial-yoga_1.jpg",
+        "mainImage": "./modules/media/narrative-machines/Narrative_Machine_5.jpg",
         "galleryImages": [
-            "./modules/media/Artificial-yoga/artificial-yoga_1.jpg",
-            "./modules/media/Artificial-yoga/artificial-yoga_2.jpg",
-            "./modules/media/Artificial-yoga/artificial-yoga_3.jpg"
+            "./modules/media/narrative-machines/IMG_4876.jpg",
+            "./modules/media/narrative-machines/IMG_4915.jpg",
+            "./modules/media/narrative-machines/Narrative_Machine_5.jpg"
         ],
-        "mainText": "'Artificial Yoga' emerged as a result of my post-graduate studies focused on the development of Machine Learning (ML) models and AI. \n The project involves generative image creation through the fine-tuning of the ML styleGan2 model using Python programming. The primary objective of this experiment was to challenge the model by providing it with a dataset that would pose difficulties in reproduction. By doing so, I aimed to explore the boundaries of the ML model's capabilities and push its creative limits. \n Building upon this initial exploration, the next phase of my work will involve integrating this trained model with another, allowing for the interpolation of results. This step opens up exciting possibilities for blending the outputs of different ML models, creating unique and hybrid visual outcomes. 'Artificial Yoga' represents an ongoing exploration into the intersection of art, technology, and AI. \n By leveraging ML techniques and pushing the boundaries of generative image creation, this ongoing project aims to expand my toolkit for creative expression through exploring AI's artistic potential."
+        "mainText": "'Narrative Machines' is part of a series of interactive video sculptures created for my undergraduate degree showcase. \n This particular installation, known as the Narrative Machine, functions as a video controller, enabling users to scroll through an extensive collection of video clips and generate a unique piece of text based on their selections. To construct this text, I employed N-grams, a technique that rearranges and generates text that appears meaningful, although it is randomly constructed. The work draws inspiration from the question of meaning, serving as a response to the philosophical perspectives of Wittgenstein and Žižek's psychoanalysis of cinema. \n By exploring the boundaries of meaning and utilising computational techniques, the Narrative Machine invites viewers to reflect on the nature of narrative and the interpretative aspects of cinema. It challenges traditional notions of storytelling and prompts contemplation on the subjective nature of how we construct meaning. \n Overall, 'Narrative Machines' seeks to engage viewers in an intellectually stimulating experience, delving into the interplay between language, visuals, and the subconscious associations that indicate narrative cues and shape understanding."
     },
     {
-        "id": "2",
+        "id": "7",
+        "title": "Glimpse",
+        "subtitle": "Audio Visual Sketch | Creative Coding",
+        "projectType": "Artwork",
+        "association": "GSA",
+        "roles": "Concept, Programming",
+        "technology": "Processing",
+        "feature-pg-position": "",
+        "mainImage": "./modules/media/glimpse/Glimpse.png",
+        "galleryImages":[
+            "./modules/media/glimpse/Glimpse.png",
+            "./modules/media/glimpse/three.png",
+            "./modules/media/glimpse/two.png"
+        ],
+        "mainText": "An audio visual sketch taking the concept of a stroboscope and applying it digitally to the screen and event loop timings.\n From my original blog post - 'There are gaps in understanding with regards to the effects of tools. Since the Industrial Revolution, our technology and tools have gained a disproportionate level of power over people, nearing the brink of annihilation. \n Throughout the 20th and 21st centuries society has been struggling to understanding the power of our technologies with their presence becoming common place all too soon. Although the technology hierarchy is being democratised, what we have quickly becomes taken for granted. This has lead to broadening questions of purpose, belonging and power, presenting a socially increasing awareness/perception of environment yet with an unclear comprehension of how deep our presence actually runs. \n This project is inspired as a pause to take a inside the tools we use and at the mechanisms that make them special. I wanted to identify the nature of perceptive mechanics and to demonstrate them in a context that is outside the exactness of science and in more holistic expression through cross sensory understanding. \n To expose the frequencies and mechanical nature within the micro processing world of computers, I am exploring what understanding can be found from expressing data through the processes of sound, cross sensory expression. \n I have been working with two variable attributes of sound, Frequency and Amplitude. Frequency, the regularity of somethings sequential presence over a given time. Amplitude, the intensity of something’s presence at point in time. \n Translating this language specific to sound into more analogous terms it became easier to think about Frequency and Amplitude in other scenarios.'",
+        "video":"https://player.vimeo.com/video/268152054?h=626c76f489"
+    },
+    {
+        "id": "8",
         "title": "Attention Tokens",
         "subtitle": "GSA | Interactive Video Sculpture",
         "projectType": "Art Installation",
@@ -55,7 +168,7 @@
         "video":"https://player.vimeo.com/video/864384782?h=2791bfd2c7"
     },
     {
-        "id": "3",
+        "id": "9",
         "title": "Colourfully",
         "subtitle": "GSA | Interactive Video Sculpture",
         "projectType": "Art Installation",
@@ -77,7 +190,7 @@
         "video":"https://player.vimeo.com/video/563272392?h=bbff098723"
     },
     {
-        "id": "4",
+        "id": "10",
         "title": "Get a grip",
         "subtitle": "UAL | Educational Project",
         "projectType": "University Project",
@@ -98,7 +211,7 @@
         "video":"https://player.vimeo.com/video/651616859?h=c62d58a4d4"
     },
     {
-        "id": "5",
+        "id": "11",
         "title": "Kill Club",
         "subtitle": "The Vic | Live Performance and Interactive Video",
         "projectType": "Club Night",
@@ -116,69 +229,7 @@
         "mainText": "'Kill-Club' was a collaboration with a club night called Kill Club, which aimed to raise awareness about the legislative challenges impacting the club scene at that time. \n As part of the club night, I created a unique security capture device using a modified CCTV camera. This device was designed to capture and photograph the eyes of individuals who participated in the performance. The captured images of the eyes were then compiled into a video, which became an integral part of the VJ (video jockey) performance during the club night. \n By incorporating these eye images, 'Kill-Club' sought to emphasise the importance of personal privacy, surveillance, and the implications of increased legislations curbing the liberating freedom of the club scene. Through this collaboration, we aimed to spark conversations and highlight the growing threats and damages faced by the club scene. \n 'Kill-Club' provided a platform to express concerns and challenge the restrictive factors impacting nightlife, while also offering an immersive and thought-provoking experience for attendees."
     },
     {
-        "id": "6",
-        "title": "Narrative Machines",
-        "subtitle": "New Designers | Interactive Video Sculpture",
-        "projectType": "Artwork",
-        "association":"GSA, New Designers",
-        "roles": "Concept, Programming, Data Cleaning, 3D Fabrication, Video Editing, Embedded Electronics",
-        "technology": "Arduino, Teensy, Processing, After Effects, RIta (Markov Chains)",
-        "feature-pg-position": "",
-        "mainImage": "./modules/media/narrative-machines/Narrative_Machine_5.jpg",
-        "galleryImages": [
-            "./modules/media/narrative-machines/IMG_4876.jpg",
-            "./modules/media/narrative-machines/IMG_4915.jpg",
-            "./modules/media/narrative-machines/Narrative_Machine_5.jpg"
-        ],
-        "mainText": "'Narrative Machines' is part of a series of interactive video sculptures created for my undergraduate degree showcase. \n This particular installation, known as the Narrative Machine, functions as a video controller, enabling users to scroll through an extensive collection of video clips and generate a unique piece of text based on their selections. To construct this text, I employed N-grams, a technique that rearranges and generates text that appears meaningful, although it is randomly constructed. The work draws inspiration from the question of meaning, serving as a response to the philosophical perspectives of Wittgenstein and Žižek's psychoanalysis of cinema. \n By exploring the boundaries of meaning and utilising computational techniques, the Narrative Machine invites viewers to reflect on the nature of narrative and the interpretative aspects of cinema. It challenges traditional notions of storytelling and prompts contemplation on the subjective nature of how we construct meaning. \n Overall, 'Narrative Machines' seeks to engage viewers in an intellectually stimulating experience, delving into the interplay between language, visuals, and the subconscious associations that indicate narrative cues and shape understanding."
-    },
-    {
-        "id": "7",
-        "title": "touchy-feely",
-        "subtitle": "New Perspectives | Interactive Multi-Media Video Game",
-        "projectType": "Collaborative Art Installation",
-        "association": "UAL, New-Perspectives",
-        "roles": "Conceptual Development, 3D Fabrication, 3D Modelling, Programming, Electronics",
-        "technology": "Unreal Engine, Arduino",
-        "feature-pg-position": "",
-        "mainImage": "./modules/media/touchy-feely/touchy-feely.jpg",
-        "galleryImages": [
-            "./modules/media/touchy-feely/1.jpg",
-            "./modules/media/touchy-feely/2.jpg",
-            "./modules/media/touchy-feely/3.jpg",
-            "./modules/media/touchy-feely/4.jpg",
-            "./modules/media/touchy-feely/5.jpg",
-            "./modules/media/touchy-feely/6.jpg",
-            "./modules/media/touchy-feely/7.jpg",
-            "./modules/media/touchy-feely/8.jpg",
-            "./modules/media/touchy-feely/touchy-feely.jpg"
-        ],
-        "mainText": "'Touchy Feely' is a group project that emerged from my master's program and was presented at a group show. \n The project delved into the realm of childhood sensory experiences, offering a unique perspective on the uninhibited curiosity and imagination of children at play. \n Our objective was to challenge conventional notions of game controller interaction by utilising the innocent and inquisitive nature with which children explore the world and emulating them in our designs. Through this playful approach, we developed innovative haptic controllers and a 3D rendered game world that captured the essence of our own childhood experiences. We crafted a diverse range of controllers utilising technologies such as capacitive touch, state triggers, piezo sensors, and potentiometers. These controls established a dialogue between participants and the interactive 3D world, inviting them to engage and respond to the virtual environment. \n 'Touchy Feely' aimed to ignite a sense of nostalgia and connection to our shared childhoods, encouraging participants to embrace the joy of exploration and discovery. By challenging traditional game controller conventions, we sought to create an immersive experience that encouraged a deeper sense of connection to the imagination, going beyond the limitations of conventional gameplay. \n Overall, the project celebrated the power of play and harnessed technology to evoke the wonder and enchantment of childhood, ultimately sparking reflection on the transformative role of interactive experiences in our lives.",
-        "video":"https://player.vimeo.com/video/858800863?h=df538d3466"
-    },
-    {
-        "id": "8",
-        "title": "Natural Technology",
-        "subtitle": "GSA | Interactive Video Sculpture",
-        "projectType": "Artwork",
-        "association": "GSA",
-        "roles": "Concept, Video Editing, Programming, Technologist",
-        "technology": "Processing, After Effects, OpenCV, Wekinator, PoseNet",
-        "feature-pg-position": "",
-        "mainImage": "./modules/media/natural-technology/gallery.jpg",
-        "galleryImages": [
-            "modules/media/natural-technology/1.jpg",
-            "modules/media/natural-technology/2.jpg",
-            "modules/media/natural-technology/3.jpg",
-            "modules/media/natural-technology/gallery.jpg",
-            "modules/media/natural-technology/studio.jpg",
-            "modules/media/natural-technology/testing.jpg"
-        ],
-        "mainText": "'Natural Technology' is a part of a series of interactive video sculptures created for my undergraduate degree showcase. \n This installation explores the juxtaposition of natural landscapes and human constructions, abrasively blending scenes and patterns of life. \n The artwork consists of two vertical video screens, each displaying a stream of videos. One screen showcases the patterns in natural world, while the other displays footage of patterns of human construction. \n Through pixel processing and alternated buffer rates, I merge the clips within each video stream, creating a captivating fusion of imagery that alternates between the two channels. A camera positioned in the middle of the installation that detects the presence of viewers. This triggers dynamic changes in the displayed videos, ensuring that the visuals respond to the viewer's presence. \n'Technically, Natural' invites viewers to contemplate the relationship between nature and human creations, blurring the boundaries between the organic and the artificial. By intertwining these contrasting elements, the installation prompts reflection on our interactions with the environment and the symbiotic interplay between the natural world and human creation.",
-        "video":"https://player.vimeo.com/video/857498887?h=ce3310f13e"
-    },
-    {
-        "id": "9",
+        "id": "12",
         "title": "Gather",
         "subtitle": "Concept Design | UX App",
         "projectType": "Collaborative Project",
@@ -188,42 +239,5 @@
         "feature-pg-position": "",
         "mainImage": "./modules/media/gather/gather.jpg",
         "mainText": "'Gather' is a concept for an app aimed at promoting local, seasonal, and organic food in Scotland.\n Developed in collaboration with designer Julia Scherrer, Gather is a passion project centered around sustainable farming, conscious consumption, and the art of culinary pairing. \n The primary goal of Gather is to bring valuable information to a wide audience, offering insights on what to buy and when, as well as suggesting ideal food pairings using the food pairing API. By doing so, the app aims to cultivate interest and enjoyment in purchasing locally sourced, unprocessed, and sustainable produce. \n Through its user-friendly design and intuitive interface, Gather seeks to inspire mindful food choices, supporting the principles of sustainability and fostering a deeper connection with the origins of our food. \n Overall, Gather is a project driven by a shared commitment to promoting sustainable practices and celebrating the diverse flavors of Scotland's local, seasonal bounty."
-    },
-    {
-        "id": "10",
-        "title": "In the eyes of the Machine",
-        "subtitle": "New Designers | Interactive Video Sculpture",
-        "projectType": "Artwork",
-        "association": "GSA",
-        "roles": "Concept, Programming, Technologist",
-        "technology": "Processing, OpenCV, Syphon, Projection Mapping",
-        "feature-pg-position": "",
-        "mainImage": "./modules/media/eyesOfMachine/eyesOfMachine.jpg",
-        "galleryImages": [
-            "./modules/media/eyesOfMachine/cctv.jpg",
-            "./modules/media/eyesOfMachine/crt.jpg",
-            "./modules/media/eyesOfMachine/demo-setup.jpg",
-            "./modules/media/eyesOfMachine/eyesOfMachine.jpg"
-        ],
-        "mainText": "'In the Eyes of Machines' is one of several interactive video sculptures created for my undergraduate degree showcase. \n This particular work focuses on the themes of surveillance and identity. \n Comprised of a variable-sized projection screen measuring, a repurposed analogue CCTV camera, computer vision technology and some custom written code, this video sculpture functions as a feedback loop between the screen and the CCTV camera, capturing and recapturing users' faces. \n Positioned between the camera and the projection screen, visitors place themselves directly within the artwork, where their captured images contribute unique elements to the piece. By leveraging the quirks and inaccuracies of the technology involved, 'In the Eyes of Machines' aims to amplify and utilise these nuances to create a captivating live interactive video sculpture, inviting viewers to contemplate the complexities of surveillance, identity, and its intersection in the modern world.",
-        "video":"https://player.vimeo.com/video/549297872?h=62470bee73"
-    },
-    {
-        "id": "11",
-        "title": "Glimpse",
-        "subtitle": "Audio Visual Sketch | Creative Coding",
-        "projectType": "Artwork",
-        "association": "GSA",
-        "roles": "Concept, Programming",
-        "technology": "Processing",
-        "feature-pg-position": "",
-        "mainImage": "./modules/media/glimpse/Glimpse.png",
-        "galleryImages":[
-            "./modules/media/glimpse/Glimpse.png",
-            "./modules/media/glimpse/three.png",
-            "./modules/media/glimpse/two.png"
-        ],
-        "mainText": "An audio visual sketch taking the concept of a stroboscope and applying it digitally to the screen and event loop timings.\n From my original blog post - 'There are gaps in understanding with regards to the effects of tools. Since the Industrial Revolution, our technology and tools have gained a disproportionate level of power over people, nearing the brink of annihilation. \n Throughout the 20th and 21st centuries society has been struggling to understanding the power of our technologies with their presence becoming common place all too soon. Although the technology hierarchy is being democratised, what we have quickly becomes taken for granted. This has lead to broadening questions of purpose, belonging and power, presenting a socially increasing awareness/perception of environment yet with an unclear comprehension of how deep our presence actually runs. \n This project is inspired as a pause to take a inside the tools we use and at the mechanisms that make them special. I wanted to identify the nature of perceptive mechanics and to demonstrate them in a context that is outside the exactness of science and in more holistic expression through cross sensory understanding. \n To expose the frequencies and mechanical nature within the micro processing world of computers, I am exploring what understanding can be found from expressing data through the processes of sound, cross sensory expression. \n I have been working with two variable attributes of sound, Frequency and Amplitude. Frequency, the regularity of somethings sequential presence over a given time. Amplitude, the intensity of something’s presence at point in time. \n Translating this language specific to sound into more analogous terms it became easier to think about Frequency and Amplitude in other scenarios.'",
-        "video":"https://player.vimeo.com/video/268152054?h=626c76f489"
     }
 ]

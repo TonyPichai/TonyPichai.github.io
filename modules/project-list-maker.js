@@ -186,32 +186,38 @@ let imgFlag = false;
 
 // Creating a carousel
 function generateCarousel(obj) {
-    const carousel = document.getElementById("carouselImg");
+    const carouselImg = document.getElementById("carouselImg");
+    const carousel = document.getElementById("articleCarousel");
     const galleryImages = obj.galleryImages; // The array
     const loadedImages = [];
 
-    for(let i = 0; i < galleryImages.length; i++) {
-        if (imgFlag === true) {
-            return;
+    if (galleryImages && galleryImages.length > 0 ) {
+        for(let i = 0; i < galleryImages.length; i++) {
+            if (imgFlag === true) {
+                return;
+            }
+            // per image basis
+            const imageURL = galleryImages[i];
+    
+            const img = new Image();
+            
+            img.src = imageURL;
+    
+            // carousel.appendChild(img);
+            // add to array
+            loadedImages.push(img);
+    
         }
-        // per image basis
-        const imageURL = galleryImages[i];
-
-        const img = new Image();
-        
-        img.src = imageURL;
-
-        // carousel.appendChild(img);
-        // add to array
-        loadedImages.push(img);
-
+        imgFlag = true;
+    
+        carouselImg.appendChild(loadedImages[0]);
+        moveCarousel(loadedImages);
+    } else {
+        carousel.style = 'hidden';
+        console.log('no images, hidden');
     }
-    imgFlag = true;
-
-
-    carousel.appendChild(loadedImages[0]);
-    moveCarousel(loadedImages);
-}
+   
+};
 
 // Generate project page content
 // Triggered by eventListener 'click' on createListItem
@@ -235,6 +241,8 @@ const generatePage = async (obj) => {
     // Populate main article
     const mainText = document.getElementById('articleText');
     mainText.innerHTML = '';
+
+    const videoContainer = document.getElementById('articleVideo');
 
     // Paragraphs created by separating body with \n newline delimiter
     const paragraphs = obj.mainText.split('\n');
@@ -265,20 +273,19 @@ const generatePage = async (obj) => {
 
     //looking for video
     if (currVideo) {
-        const videoContainer = document.getElementById('articleVideo');
-        const iFrame = document.createElement('iframe');
+        const iFrameVid = document.createElement('iFrame');
 
-        iFrame.src = currVideo;
-        iFrame.innerHTML="";
-        iFrame.style.title = "vimeo-player"
-        iFrame.style.frameborder = "0"
-        iFrame.style.allowfullscreen = true;
+        iFrameVid.src = currVideo;
+        iFrameVid.innerHTML="";
+        iFrameVid.style.title = "vimeo-player"
+        iFrameVid.style.frameborder = "0"
+        iFrameVid.style.allowfullscreen = true;
 
         videoContainer.classList.add('video-container');
-        videoContainer.appendChild(iFrame);
+        videoContainer.appendChild(iFrameVid);
 
         videoFlag = true;
-    }
+    };
 
 }
 

@@ -1,6 +1,8 @@
 import { createProjectList } from './modules/project-list-maker.js';
 import { populateGalleryContainer } from './modules/gallery-maker.js';
 
+// The header file linking the other js files to the page
+
 // 1. GETTING data form content.json
 // 2. Handle json data as a variable
 // 3. Pass variable to other functions as needed 
@@ -10,9 +12,9 @@ async function generatePageContent() {
         // Get data as string and convert to usable json
 
         // Local file path
-        const response = await fetch('modules/content.json');
+        // const response = await fetch('modules/content.json');
         // Github file path!!!
-        // const response = awaitÆ fetch('/modules/content.json');
+        const response = awaitÆ fetch('/modules/content.json');
 
         const jsonData = await response.json(); // Convert string to json
 
