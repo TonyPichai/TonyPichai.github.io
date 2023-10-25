@@ -280,7 +280,6 @@ font-weight: bolder;
         /* position: relative; */
         overflow: hidden;
         padding: 0;
-
     }
     
     .video-container iframe {
@@ -292,11 +291,15 @@ font-weight: bolder;
         margin: 0;
         /* height: 100%; */
     }
+    .article {
+        overflow: hidden;
+    }
     .article-container {
         flex-basis: auto;
         width: 100%;
-        /* max-width: 30%;  */
+        overflow: hidden;
     }
+    
     .page-count {
         justify-content: space-around;
     }
