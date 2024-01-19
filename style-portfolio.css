@@ -139,7 +139,8 @@ main {
     max-height: fit-content;
     min-height: 20vh;
     padding: 0;
-    overflow-y: scroll;
+    overflow: hidden;
+    /* overflow-y: scroll; */
 }
 
 .content * {
