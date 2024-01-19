@@ -2,7 +2,7 @@
 const count = document.getElementById('count');
 count.innerHTML = 1;
 const portfolioPages = [];
-const pgTotal = 7;
+const pgTotal = 8;
 
 function hidePages(currSlide) {
     for(let i = 0; i< portfolioPages.length; i++) {
@@ -190,3 +190,4 @@ function nameNav() {
     })
 }
 nameNav();
+
