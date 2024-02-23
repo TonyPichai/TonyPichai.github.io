@@ -99,9 +99,13 @@
         
 
         up.addEventListener('click', () => {
+            if(sequenceLength >= 10) {
+                sequenceLength = 0;
+            }
             sequenceLength++;
             sqncValInput.innerHTML = sequenceLength.toString();
             clearPage();
+
         });
 
         down.addEventListener('click', () => {
