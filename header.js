@@ -52,6 +52,9 @@ async function scriptSelector(jsonData, galleryGrid) {
 
     } else if (currentPageResult === 'about') {
       console.log('about page');
+
+    } else if (currentPageResult === 'sketchbook') {
+      console.log('sketchbook page');
     }
 }
 
@@ -64,6 +67,9 @@ function currentPage() {
         return 'index';
     } else if (pathname.includes('/about.html')) {
         return 'about';
+    }
+    else if (pathname.includes('/sketchbook.html')) {
+        return 'sketchbook';
     }
         return 'unknown';
 }; 

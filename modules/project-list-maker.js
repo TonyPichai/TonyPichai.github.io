@@ -1,13 +1,13 @@
 // PROJECTS PAGE 
 // Project list and page generation from content.json Array
 export async function createProjectList(jsonData) {
-    // iterate (map) over each element in jsonDat
+    // iterate (map) over each element in jsonData
     const listItemPromises = jsonData.map( obj => triggerPageBuilding(jsonData, obj));
     return Promise.all(listItemPromises);
 }
 
 
-// Add a popstate event listener for backwards navigation use case
+// Popstate event listener for user backwards navigation use case
 window.addEventListener('popstate', () => {
     const currentURL = new URL(window.location.href);
     if (currentURL.searchParams.has('index')) {

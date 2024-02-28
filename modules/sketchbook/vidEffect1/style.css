@@ -1,0 +1,14 @@
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+}
+#webcam,
+#canvas1,
+#canvas2 {
+    border: none;
+    margin: 1px auto;
+}
+#canvas2 {
+    border: 3px solid white;
+}
