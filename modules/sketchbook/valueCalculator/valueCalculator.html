@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Value Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section class="calculator">
+      <h1>Best Value Calculator</h1>
+
+      <div class="grid">
+        <!-- Product 1 -->
+        <div class="product">
+          <h2>Product 1</h2>
+          <input type="number" id="qty1" placeholder="Quantity">
+          <select id="unit1">
+            <option value="g">Grams</option>
+            <option value="kg">Kilograms</option>
+            <option value="ml">Millilitres</option>
+            <option value="l">Litres</option>
+            <option value="inch">Inches (Pizza Diameter)</option>
+            <option value="custom">Custom</option>
+          </select>
+          <input type="number" id="customFactor1" placeholder="Units per base unit" step="0.01" style="display:none">
+          <input type="text" id="customLabel1" placeholder="Custom unit label (e.g., slices)" style="display:none">
+          <input type="number" id="price1" placeholder="Price (£)" step="0.01">
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product">
+          <h2>Product 2</h2>
+          <input type="number" id="qty2" placeholder="Quantity">
+          <select id="unit2">
+            <option value="g">Grams</option>
+            <option value="kg">Kilograms</option>
+            <option value="ml">Millilitres</option>
+            <option value="l">Litres</option>
+            <option value="inch">Inches (Pizza Diameter)</option>
+            <option value="custom">Custom</option>
+          </select>
+          <input type="number" id="customFactor2" placeholder="Units per base unit" step="0.01" style="display:none">
+          <input type="text" id="customLabel2" placeholder="Custom unit label (e.g., slices)" style="display:none">
+          <input type="number" id="price2" placeholder="Price (£)" step="0.01">
+        </div>
+      </div>
+
+      <button id="compareBtn">Compare</button>
+
+      <div id="result" class="result"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Tony Pichai</p>
+  </footer>
+
+  <script>
+    function convertToBase(quantity, unit, customUnitFactor = 1) {
+      switch (unit) {
+        case 'g': return quantity / 1000; // grams to kg
+        case 'kg': return quantity;
+        case 'ml': return quantity / 1000; // ml to litres
+        case 'l': return quantity;
+        case 'inch': return Math.PI * Math.pow(quantity/2, 2); // pizza area
+        case 'custom': return quantity * customUnitFactor; // user-defined
+        default: return quantity;
+      }
+    }
+
+    function calculateValue() {
+      const qty1 = parseFloat(document.getElementById('qty1').value);
+      const unit1 = document.getElementById('unit1').value;
+      const price1 = parseFloat(document.getElementById('price1').value);
+      const customFactor1 = parseFloat(document.getElementById('customFactor1').value) || 1;
+      const customLabel1 = document.getElementById('customLabel1').value || 'unit';
+
+      const qty2 = parseFloat(document.getElementById('qty2').value);
+      const unit2 = document.getElementById('unit2').value;
+      const price2 = parseFloat(document.getElementById('price2').value);
+      const customFactor2 = parseFloat(document.getElementById('customFactor2').value) || 1;
+      const customLabel2 = document.getElementById('customLabel2').value || 'unit';
+
+      if (isNaN(qty1) || isNaN(price1) || isNaN(qty2) || isNaN(price2)) {
+        document.getElementById('result').innerText = "Please fill in all fields.";
+        return;
+      }
+
+      const baseQty1 = convertToBase(qty1, unit1, customFactor1);
+      const baseQty2 = convertToBase(qty2, unit2, customFactor2);
+
+      const value1 = price1 / baseQty1;
+      const value2 = price2 / baseQty2;
+
+      const unitLabel1 = unit1 === 'custom' ? customLabel1 : unit1;
+      const unitLabel2 = unit2 === 'custom' ? customLabel2 : unit2;
+
+      let result = `Product 1: £${value1.toFixed(2)} per ${unitLabel1}\n`;
+      result += `Product 2: £${value2.toFixed(2)} per ${unitLabel2}\n`;
+
+      if (value1 < value2) {
+        result += "👉 Product 1 is better value.";
+      } else if (value2 < value1) {
+        result += "👉 Product 2 is better value.";
+      } else {
+        result += "Both products are the same value.";
+      }
+
+      document.getElementById('result').innerText = result;
+    }
+
+    function toggleCustomField(unitSelectId, factorId, labelId) {
+      const unit = document.getElementById(unitSelectId).value;
+      const factorField = document.getElementById(factorId);
+      const labelField = document.getElementById(labelId);
+      if (unit === 'custom') {
+        factorField.style.display = 'block';
+        labelField.style.display = 'block';
+      } else {
+        factorField.style.display = 'none';
+        labelField.style.display = 'none';
+      }
+    }
+
+    document.getElementById('unit1').addEventListener('change', function() {
+      toggleCustomField('unit1','customFactor1','customLabel1');
+    });
+    document.getElementById('unit2').addEventListener('change', function() {
+      toggleCustomField('unit2','customFactor2','customLabel2');
+    });
+
+    document.getElementById('compareBtn').addEventListener('click', calculateValue);
+  </script>
+</body>
+</html>

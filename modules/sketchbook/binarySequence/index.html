@@ -1,183 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .container{
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            align-items: center;
-            justify-content: center;
-        }
-        .module{
-            min-width: 10%;
-            max-width: 75%;
-            margin: 1em auto;
-            border: 5px solid black;
-        }
-        #pattern_window{
-            list-style-type: none;
-            padding: 1em;
-        }
-        #pattern_window li{
-            display: inline-block;
-            margin: 1em auto;
-        }
+  <meta charset="UTF-8">
+  <title>Best Value Calculator</title>
+  <script>
+    function convertToBase(quantity, unit) {
+      switch (unit) {
+        case 'g': return quantity / 1000; // grams to kg
+        case 'kg': return quantity;
+        case 'ml': return quantity / 1000; // ml to litres
+        case 'l': return quantity;
+        case 'inch': return Math.PI * Math.pow(quantity/2, 2); // pizza area in square inches
+        default: return quantity;
+      }
+    }
 
-        #sqncLength {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            margin: 0 0.5em;
-        }
+    function calculateValue() {
+      const qty1 = parseFloat(document.getElementById('qty1').value);
+      const unit1 = document.getElementById('unit1').value;
+      const price1 = parseFloat(document.getElementById('price1').value);
 
-        button{
-            background-color: antiquewhite;
-            border: 3px solid black;
-            box-shadow: 0.3em;
-            margin: 0 auto;
-            width: 100%;
-        }
+      const qty2 = parseFloat(document.getElementById('qty2').value);
+      const unit2 = document.getElementById('unit2').value;
+      const price2 = parseFloat(document.getElementById('price2').value);
 
-        article{
-            min-width: 10%;
-            max-width: 75%;
-            text-align: left;
-        }
-    </style>
+      if (isNaN(qty1) || isNaN(price1) || isNaN(qty2) || isNaN(price2)) {
+        document.getElementById('result').innerText = "Please fill in all fields.";
+        return;
+      }
+
+      const baseQty1 = convertToBase(qty1, unit1);
+      const baseQty2 = convertToBase(qty2, unit2);
+
+      const value1 = price1 / baseQty1;
+      const value2 = price2 / baseQty2;
+
+      let result = `Product 1: £${value1.toFixed(2)} per unit | Product 2: £${value2.toFixed(2)} per unit\n`;
+
+      if (value1 < value2) {
+        result += "👉 Product 1 is better value.";
+      } else if (value2 < value1) {
+        result += "👉 Product 2 is better value.";
+      } else {
+        result += "Both products are the same value.";
+      }
+
+      document.getElementById('result').innerText = result;
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="container">
-        <div id="pattern" class="module">
-            <ol id="pattern_window">
-                <li id="0" class="patch"></li>
-                <li id="1" class="patch"></li>
-                <li id="2" class="patch"></li>
-                <li id="3" class="patch"></li>
-                <li id="4" class="patch"></li>
-                <li id="5" class="patch"></li>
-                <li id="6" class="patch"></li>
-                <li id="7" class="patch"></li>
-                <li id="8" class="patch"></li>
-                <li id="9" class="patch"></li>
-            </ol>
-        </div>
+<body class="bg-gray-100 p-6 font-sans">
+  <div class="max-w-xl mx-auto bg-white p-6 rounded-2xl shadow-md">
+    <h1 class="text-xl font-bold mb-4">Best Value Calculator</h1>
 
-        <div class="module">
-            <h3>Sequence length</h3>
-            <div  id="sqncLength">
-                <h2 id="down" class="module_element"><</h2>
-                <h2 id="value" class="module_element">3</h2>
-                <h2 id="up" class="module_element">></h2>
-            </div>
-        </div>
+    <div class="grid grid-cols-2 gap-4 mb-4">
+      <!-- Product 1 -->
+      <div>
+        <h2 class="font-semibold mb-2">Product 1</h2>
+        <input type="number" id="qty1" placeholder="Quantity" class="border rounded p-2 w-full mb-2">
+        <select id="unit1" class="border rounded p-2 w-full mb-2">
+          <option value="g">Grams</option>
+          <option value="kg">Kilograms</option>
+          <option value="ml">Millilitres</option>
+          <option value="l">Litres</option>
+          <option value="inch">Inches (Pizza Diameter)</option>
+        </select>
+        <input type="number" id="price1" placeholder="Price (£)" step="0.01" class="border rounded p-2 w-full">
+      </div>
 
-        <div class="module">
-            <button id="action">
-                <h1>Gimme a binary sequence!</h1>
-            </button>
-        </div>
-
-        <article id="log">
-            <div id="results"></div>
-        </article>
+      <!-- Product 2 -->
+      <div>
+        <h2 class="font-semibold mb-2">Product 2</h2>
+        <input type="number" id="qty2" placeholder="Quantity" class="border rounded p-2 w-full mb-2">
+        <select id="unit2" class="border rounded p-2 w-full mb-2">
+          <option value="g">Grams</option>
+          <option value="kg">Kilograms</option>
+          <option value="ml">Millilitres</option>
+          <option value="l">Litres</option>
+          <option value="inch">Inches (Pizza Diameter)</option>
+        </select>
+        <input type="number" id="price2" placeholder="Price (£)" step="0.01" class="border rounded p-2 w-full">
+      </div>
     </div>
 
-    <script>        
-        function sequence() {
-            const btn = document.getElementById('action');
-            const up = document.getElementById('up');
-            const down = document.getElementById('down');
-            const results = document.getElementById('results');
-            const sqncValInput = document.getElementById('value');
-            let valuesObj = {};
-            let keyPos = 0;
-            let attemptNo = 0;
-            let sequenceLength = parseInt(sqncValInput.innerHTML);
-            let attemptLimit = sequenceLength * sequenceLength
-            
-            
-            up.addEventListener('click', () => {
-                if(sequenceLength >= 10) {
-                    sequenceLength = 0;
-                }
-                sequenceLength++;
-                sqncValInput.innerHTML = sequenceLength.toString();
-                clearPage();
-            });
-            down.addEventListener('click', () => {
-                if (sequenceLength > 1) {
-                    sequenceLength--;
-                    sqncValInput.innerHTML = sequenceLength.toString();
-                    clearPage();
-                }
-            });
+    <button onclick="calculateValue()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Compare</button>
 
-            // btn.addEventListener('click', generate_a_value);
-
-
-            
-            btn.addEventListener('click', generate_a_value = async (valuesObj) => {
-                if (attemptNo == attemptLimit) {
-                return console.log('All possibilities found');
-            }
-                    let newValue = '';
-                    for (let i = 0; i < sequenceLength; i++) {
-                        const randNum = Math.random(); // Generates a random number between 0 and 1
-                        // Round the value to either 0 or 1;
-                        newValue += (randNum <= 0.5) ? '0' : '1'; // variable, the operation, (condition determining operator case), ? true case, : false case
-                    }
-                    let pairs = await check_for_pairs(newValue);
-                    if (pairs) {
-                        attemptNo++
-                        console.log('attemptNo');
-                        if (attemptNo <= attemptLimit) await generate_a_value(valuesObj);
-                        else console.log('no more possibilities');
-                        return;
-                    }
-                });
-            const check_for_pairs = async (newValue) => {
-                for (let key in valuesObj) {
-                    if (valuesObj.hasOwnProperty(key) && newValue === valuesObj[key]) {
-                        console.log('Pair found, value recalculated');
-                        return true; // Not unique, a pair is found
-                    }
-                }
-                valuesObj[keyPos] = newValue;
-                keyPos++;
-                updatePatternWindow(newValue);
-                return false; // Unique value
-            };
-            
-            function updatePatternWindow(value) {
-                const patternWindow = document.getElementById('pattern_window');
-                const patternItems = patternWindow.getElementsByTagName('li');
-                // forced refresh of elements for colour update
-                patternWindow.style.display = 'none';
-                patternWindow.style.display = 'inline-block';
-                for (let i = 0; i < value.length; i++) {
-                    patternItems[i].textContent = value[i];
-                    if( value[i] === '1') {
-                        patternItems[i].style.background = 'rgb(255, 0 ,0)';
-                    }
-                    else {
-                        patternItems[i].style.background = 'rgb(0, 255 ,0)';
-                    }
-                }
-                let prevResults = results.textContent;
-            
-                results.textContent = value + '    ' + prevResults;
-            };
-            function clearPage() {
-                results.textContent = '';
-                valuesObj = {};
-            }
-
-        }
-        sequence();
-    </script>
+    <div id="result" class="mt-4 font-semibold text-gray-700"></div>
+  </div>
 </body>
 </html>
