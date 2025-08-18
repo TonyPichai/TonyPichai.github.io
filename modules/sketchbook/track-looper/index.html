@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looper Machine 1</title>
+
+    <style>
+        html {
+            font-size: 2vw;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h1 {
+            font-size: calc(1.5em - 0.1em);
+        }
+        h2 {
+            font-size: calc(1em - 0.1em);
+            margin: calc(0.5em - 0.1em);
+            border: 0.1em solid magenta;
+            border-radius: 5px;
+            background-color: aliceblue;
+        }
+        h3 {
+            font-size: calc(1em - 0.1em);
+        }
+        #looperMachine {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+        }
+        .container {
+            display: flex;
+            background-color: aliceblue;
+            margin: 0 auto;
+            border: 5px solid black;
+        }
+
+        .title {
+            font-family: fantasy;
+            margin: 1em auto;
+            color: skyblue;
+        }
+
+        #tracksGUI {
+            display: flex;
+            margin: 0 auto; 
+            border: 1px solid pink;
+            min-width: 20px;
+            min-height: 20px;
+            background-color: bisque;
+        }
+        .track {
+            border: 2px solid black;
+            min-width: 50px;
+        }
+        .feature {
+            transition: opacity 0.2s ease,
+                        color 0.2s ease,
+                        /* box-shadow 0.2s ease, */
+                        /* border 0.2s ease */
+                        ;
+        }
+        .feature:hover {
+            opacity: 0.8;
+            color: #333;
+        }
+
+        .feature {
+            transition: transform 0.01s ease,
+                        /* box-shadow 0.1s ease, */
+                        /* background-color 0.1s ease */
+                        ;
+        }
+        .feature:active {
+            transform: scale(0.98);
+            /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); */
+            /* background-color: #f0f0f0;  */
+        }
+    </style>
+
+</head>
+
+<body>
+    
+    <div id="looperMachine" class="container">
+
+        <h1 id="main-title" class="title">
+            Looping Machine
+        </h1>
+        
+        <div class="container">
+            <select id="looperTracks">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </div>
+
+        <div id="tracksGUI" class="container">
+            <div id="original-track" class="track">
+                <div class="feature" data-action="record">
+                    <h2>record</h2>
+                </div>
+                <div class="feature" data-action="stopRec">
+                    <h2>stopRec</h2>
+                </div>
+                <div class="feature" data-action="play/pause">
+                    <h2>play/pause</h2>
+                </div>
+                <div class="feature" data-action="stop">
+                    <h2>stop</h2>
+                </div>
+                <div class="feature" data-action="clear">
+                    <h2>clear</h2>
+                </div>
+                <div class="feature" data-action="volume">
+                    <h2>volume</h2>
+                </div>
+                <div class="feature" data-action="trackLength">
+                    <h2>trackLength</h2>
+                </div>
+                <div class="feature" data-action="metronome">
+                    <h2>metronome</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="addGUITrack.js"></script>
+    <script>
+         // Function to handle recording for a track
+        const recordTrack = (trackId) => {
+            // Your recording logic for the specified track
+            console.log(`Recording started for track ${trackId}`);
+
+            // Start a timer to update the console with elapsed time
+            let startTime = Date.now();
+            const timer = setInterval(() => {
+                const elapsedTime = Math.floor((Date.now() - startTime) / 1000); // in seconds
+                console.log(`Recording ${elapsedTime} seconds`);
+            }, 1000); // Update every second
+
+            // Example: Stop the timer after 10 seconds (adjust as needed)
+            setTimeout(() => {
+                clearInterval(timer);
+                console.log('Recording stopped');
+            }, 10000); // Stop after 10 seconds (adjust as needed)
+        };
+
+        // Function to handle stopping recording for a track
+        const stopRecordingTrack = (trackId, timer) => {
+            // Your logic to stop recording for the specified track
+            console.log(`Recording stopped for track ${trackId}`);
+            clearInterval(timer); // Stop the timer
+        };
+
+        // Placeholder functions for other features
+        const playPause = (trackId) => {
+            console.log(`Play/pause functionality for track ${trackId}`);
+        };
+
+        const stop = (trackId) => {
+            console.log(`Stop functionality for track ${trackId}`);
+        };
+
+        const clear = (trackId) => {
+            console.log(`Clear functionality for track ${trackId}`);
+        };
+
+        const adjustVolume = (trackId) => {
+            console.log(`Volume adjustment functionality for track ${trackId}`);
+        };
+
+        const trackLength = (trackId) => {
+            console.log(`Track length adjustment functionality for track ${trackId}`);
+        };
+
+        const metronome = (trackId) => {
+            console.log(`Metronome functionality for track ${trackId}`);
+        };
+
+        // Example event listener for features
+        document.addEventListener('click', (event) => {
+            const clickedElement = event.target;
+        
+            // Check if the clicked element is a feature or its child h2 with data-action attribute
+            const featureElement = clickedElement.closest('.feature');
+            if (featureElement && featureElement.dataset.action) {
+                // Find the parent
+                const trackElement = featureElement.closest('.track');
+                if (trackElement) {
+                    const trackId = trackElement.id;
+                    const action = featureElement.dataset.action;
+                
+                    // Perform action based on data-action attribute
+                    if (action === 'record') {
+                        recordTrack(trackId);
+                    } else if (action === 'stopRec') {
+                        stopRecordingTrack(trackId);
+                    } else if (action === 'play/pause') {
+                        playPause(trackId);
+                    } else if (action === 'stop') {
+                        stop(trackId);
+                    } else if (action === 'clear') {
+                        clear(trackId);
+                    } else if (action === 'volume') {
+                        adjustVolume(trackId);
+                    } else if (action === 'trackLength') {
+                        trackLength(trackId);
+                    } else if (action === 'metronome') {
+                        metronome(trackId);
+                    }
+                    // Add more conditions for other actions as needed
+                }
+            }
+        });
+    </script>
+
+                       
+</body>
+</html>
