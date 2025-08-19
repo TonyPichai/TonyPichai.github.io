@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -20,7 +20,6 @@
       <h1>Best Value Calculator</h1>
 
       <div class="grid">
-        <!-- Product 1 -->
         <div class="product">
           <h2>Product 1</h2>
           <input type="number" id="qty1" placeholder="Quantity">
@@ -37,7 +36,6 @@
           <input type="number" id="price1" placeholder="Price (£)" step="0.01">
         </div>
 
-        <!-- Product 2 -->
         <div class="product">
           <h2>Product 2</h2>
           <input type="number" id="qty2" placeholder="Quantity">
@@ -56,7 +54,6 @@
       </div>
 
       <button id="compareBtn">Compare</button>
-
       <div id="result" class="result"></div>
     </section>
   </main>
@@ -67,12 +64,12 @@
 
   <script>
     function convertToBase(quantity, unit, customUnitFactor = 1) {
-      switch (unit) {
-        case 'g': return quantity / 1000; // grams to kg
-        case 'kg': return quantity;
-        case 'ml': return quantity / 1000; // ml to litres
-        case 'l': return quantity;
-        case 'inch': return Math.PI * Math.pow(quantity/2, 2); // pizza area
+      switch(unit) {
+        case 'g': return quantity; // keep grams as base for comparison
+        case 'kg': return quantity * 1000; // convert kg to grams
+        case 'ml': return quantity; // keep ml as base
+        case 'l': return quantity * 1000; // convert L to ml
+        case 'inch': return Math.PI * Math.pow(quantity / 2, 2); // pizza area in square inches
         case 'custom': return quantity * customUnitFactor; // user-defined
         default: return quantity;
       }
@@ -91,13 +88,18 @@
       const customFactor2 = parseFloat(document.getElementById('customFactor2').value) || 1;
       const customLabel2 = document.getElementById('customLabel2').value || 'unit';
 
-      if (isNaN(qty1) || isNaN(price1) || isNaN(qty2) || isNaN(price2)) {
-        document.getElementById('result').innerText = "Please fill in all fields.";
+      if (isNaN(qty1) || isNaN(price1) || isNaN(qty2) || isNaN(price2) || qty1 <= 0 || qty2 <= 0) {
+        document.getElementById('result').innerText = 'Please enter valid positive quantities and prices.';
         return;
       }
 
       const baseQty1 = convertToBase(qty1, unit1, customFactor1);
       const baseQty2 = convertToBase(qty2, unit2, customFactor2);
+
+      if (baseQty1 <= 0 || baseQty2 <= 0) {
+        document.getElementById('result').innerText = 'Invalid conversion factor or quantity resulting in zero or negative base unit.';
+        return;
+      }
 
       const value1 = price1 / baseQty1;
       const value2 = price2 / baseQty2;
@@ -108,12 +110,12 @@
       let result = `Product 1: £${value1.toFixed(2)} per ${unitLabel1}\n`;
       result += `Product 2: £${value2.toFixed(2)} per ${unitLabel2}\n`;
 
-      if (value1 < value2) {
-        result += "👉 Product 1 is better value.";
-      } else if (value2 < value1) {
-        result += "👉 Product 2 is better value.";
+      if (Math.abs(value1 - value2) < 0.0001) {
+        result += 'Both products are essentially the same value.';
+      } else if (value1 < value2) {
+        result += '👉 Product 1 is better value.';
       } else {
-        result += "Both products are the same value.";
+        result += '👉 Product 2 is better value.';
       }
 
       document.getElementById('result').innerText = result;
@@ -121,24 +123,12 @@
 
     function toggleCustomField(unitSelectId, factorId, labelId) {
       const unit = document.getElementById(unitSelectId).value;
-      const factorField = document.getElementById(factorId);
-      const labelField = document.getElementById(labelId);
-      if (unit === 'custom') {
-        factorField.style.display = 'block';
-        labelField.style.display = 'block';
-      } else {
-        factorField.style.display = 'none';
-        labelField.style.display = 'none';
-      }
+      document.getElementById(factorId).style.display = unit === 'custom' ? 'block' : 'none';
+      document.getElementById(labelId).style.display = unit === 'custom' ? 'block' : 'none';
     }
 
-    document.getElementById('unit1').addEventListener('change', function() {
-      toggleCustomField('unit1','customFactor1','customLabel1');
-    });
-    document.getElementById('unit2').addEventListener('change', function() {
-      toggleCustomField('unit2','customFactor2','customLabel2');
-    });
-
+    document.getElementById('unit1').addEventListener('change', () => toggleCustomField('unit1', 'customFactor1', 'customLabel1'));
+    document.getElementById('unit2').addEventListener('change', () => toggleCustomField('unit2', 'customFactor2', 'customLabel2'));
     document.getElementById('compareBtn').addEventListener('click', calculateValue);
   </script>
 </body>
