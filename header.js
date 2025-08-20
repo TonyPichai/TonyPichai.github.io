@@ -1,6 +1,17 @@
 import { createProjectList } from './modules/project-list-maker.js';
 import { populateGalleryContainer } from './modules/gallery-maker.js';
 
+
+// **** IMPORTANT NOTE ****
+// This file is the header.js file that links the other js files to the page.
+// It is not the main file that runs the code for the page.
+// The main file that runs the code for the page is the index.js file.
+
+// To run local tests you need to change the file path in the fetch() function to point to the local content.json file.
+// For example, change the file path to 'modules/content.json'.
+// When you are ready to deploy the code to GitHub, change the file path back to '/modules/content.json'.
+
+
 // The header file linking the other js files to the page
 
 // 1. GETTING data form content.json
@@ -11,7 +22,7 @@ async function generatePageContent() {
     try {
         // Get data as string and convert to usable json
 
-        // Local file path
+        // Local file path!!!!!!
         // const response = await fetch('modules/content.json');
         // Github file path!!!
         const response = await fetch('/modules/content.json');
@@ -53,8 +64,8 @@ async function scriptSelector(jsonData, galleryGrid) {
     } else if (currentPageResult === 'about') {
       console.log('about page');
 
-    } else if (currentPageResult === 'sketchbook') {
-      console.log('sketchbook page');
+    } else if (currentPageResult === 'sketches') {
+      console.log('sketches page');
     }
 }
 
@@ -68,8 +79,8 @@ function currentPage() {
     } else if (pathname.includes('/about.html')) {
         return 'about';
     }
-    else if (pathname.includes('/sketchbook.html')) {
-        return 'sketchbook';
+    else if (pathname.includes('/sketches.html')) {
+        return 'sketches';
     }
         return 'unknown';
 }; 
